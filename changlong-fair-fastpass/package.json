@@ -1,0 +1,13 @@
+{
+  "name": "changlong-fair-fastpass",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reusable QR/NFC trade-fair lead capture page for Changlong",
+  "scripts": {
+    "dev": "wrangler pages dev public",
+    "check": "node --check public/app.js && node --check functions/api/register.js && node --check functions/api/event/[slug].js"
+  },
+  "devDependencies": {
+    "wrangler": "^4.37.0"
+  }
+}
