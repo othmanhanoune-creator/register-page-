@@ -1,0 +1,7 @@
+@import url('/mobile.css?v=20260917-1915');
+
+@media (max-width: 768px) {
+  .page-shell {
+    background-image: url('/assets/phone-reference.png?v=20260917-1915') !important;
+  }
+}
