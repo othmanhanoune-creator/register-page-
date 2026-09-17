@@ -1,0 +1,138 @@
+:root { --phone-w: min(100vw, 682px); }
+
+html, body {
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  margin: 0;
+  background: #9f9381;
+  overflow-x: hidden;
+}
+
+.page-shell {
+  position: relative !important;
+  display: block !important;
+  width: var(--phone-w) !important;
+  min-height: calc(var(--phone-w) * 2048 / 682) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: url('/assets/phone-reference.png?v=20260917-1915') top center / 100% auto no-repeat !important;
+  isolation: isolate;
+}
+
+.floor-art,
+.card-wash,
+.hero-copy,
+.privacy-copy,
+.website-link span,
+.confirm-button .button-label,
+.form-grid .field span,
+.contact-hint {
+  display: none !important;
+}
+
+.registration-card {
+  position: relative !important;
+  width: var(--phone-w) !important;
+  min-height: calc(var(--phone-w) * 2048 / 682) !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+.registration-card::after { display: none !important; }
+
+#lead-form {
+  position: absolute !important;
+  left: calc(var(--phone-w) * 62 / 682) !important;
+  top: calc(var(--phone-w) * 531 / 682) !important;
+  width: calc(var(--phone-w) * 558 / 682) !important;
+  margin: 0 !important;
+  z-index: 3 !important;
+}
+
+.form-grid { display: block !important; position: relative !important; }
+.field { display: block !important; position: absolute !important; left: 0 !important; width: 100% !important; }
+.field:nth-child(1) { top: 0 !important; }
+.field:nth-child(2) { top: calc(var(--phone-w) * 141 / 682) !important; }
+.field:nth-child(3) { top: calc(var(--phone-w) * 285 / 682) !important; }
+.field:nth-child(4) { top: calc(var(--phone-w) * 426 / 682) !important; }
+.field:nth-child(5) { top: calc(var(--phone-w) * 570 / 682) !important; }
+.field:nth-child(6) { top: calc(var(--phone-w) * 711 / 682) !important; }
+
+.field input {
+  width: 100% !important;
+  height: calc(var(--phone-w) * 74 / 682) !important;
+  padding: 0 calc(var(--phone-w) * 24 / 682) !important;
+  border: 0 !important;
+  border-radius: calc(var(--phone-w) * 28 / 682) !important;
+  background: transparent !important;
+  color: #60769a !important;
+  font-size: max(16px, calc(var(--phone-w) * 24 / 682)) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.field input::placeholder { color: transparent !important; }
+.field input:focus { background: rgba(255,255,255,.08) !important; box-shadow: none !important; }
+
+.confirm-button {
+  position: absolute !important;
+  top: calc(var(--phone-w) * 822 / 682) !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: calc(var(--phone-w) * 74 / 682) !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: calc(var(--phone-w) * 28 / 682) !important;
+  background: transparent !important;
+  color: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+.spinner { display: none !important; }
+
+.form-message {
+  position: absolute !important;
+  top: calc(var(--phone-w) * 915 / 682) !important;
+  left: 0 !important;
+  width: 100% !important;
+  min-height: calc(var(--phone-w) * 18 / 682) !important;
+  margin: 0 !important;
+  text-align: center !important;
+  font-size: max(11px, calc(var(--phone-w) * 12 / 682)) !important;
+  color: #912a2a !important;
+}
+
+.website-link {
+  position: absolute !important;
+  left: calc(var(--phone-w) * 274 / 682) !important;
+  top: calc(var(--phone-w) * 1548 / 682) !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: calc(var(--phone-w) * 116 / 682) !important;
+  height: calc(var(--phone-w) * 68 / 682) !important;
+  margin: 0 !important;
+  z-index: 4 !important;
+  color: transparent !important;
+  transform: none !important;
+}
+.website-logo-wrap { width: 100% !important; height: 100% !important; border: 0 !important; background: transparent !important; }
+.website-logo-wrap img { opacity: 0 !important; width: 100% !important; height: 100% !important; }
+
+.success-state {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 10 !important;
+  padding: calc(var(--phone-w) * 60 / 682) !important;
+  background: rgba(255,255,255,.92) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
