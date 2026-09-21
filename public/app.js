@@ -34,7 +34,7 @@ form?.addEventListener("submit", async (event) => {
     if (!response.ok || !result.ok) {
       if (result.code === "SUPABASE_NOT_CONFIGURED") {
         throw new Error(
-          "Local server setup is incomplete. Add your Supabase secret to .dev.vars, restart npm run dev, then try again."
+          "The production registration service is missing its Supabase secret. Please contact a Changlong representative."
         );
       }
 
@@ -57,7 +57,7 @@ form?.addEventListener("submit", async (event) => {
 
     showError(
       isNetworkError
-        ? "The server could not be reached. Please check that npm run dev is still running and try again."
+        ? "The registration server could not be reached. Please try again."
         : message
     );
   } finally {
