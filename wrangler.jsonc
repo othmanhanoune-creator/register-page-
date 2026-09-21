@@ -1,10 +1,28 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
+
   "name": "register-page",
   "main": "worker/index.js",
-  "compatibility_date": "2026-09-17",
+  "compatibility_date": "2026-09-18",
+
   "assets": {
-    "directory": "./changlong-fair-fastpass/public",
+    "directory": "./public",
     "binding": "ASSETS"
+  },
+
+  "vars": {
+    "SUPABASE_URL": "https://oeaflajojyxsexrusqpc.supabase.co",
+
+    "EVENT_SLUG": "batimat-paris-2026",
+
+    "SMTP_HOST": "smtp.qiye.aliyun.com",
+    "SMTP_PORT": "465",
+    "SMTP_EHLO_NAME": "changlongflor.com",
+
+    "MAIL_FROM_NAME": "Changlong",
+    "EMAIL_SUBJECT": "Thank you for visiting Changlong",
+
+    "CATALOGUE_PATH": "/assets/Changlong-Catalogue.pdf",
+    "CATALOGUE_FILENAME": "Changlong-Catalogue.pdf"
   }
 }

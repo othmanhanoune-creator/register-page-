@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111111">
+  <title>Build with Changlong</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="stage">
+    <img class="background" src="/assets/background.png" alt="">
+
+    <section class="form-card" aria-labelledby="page-title">
+      <div class="content">
+        <header class="header">
+          <img class="logo" src="/assets/logo.png" alt="Changlong">
+
+          <div class="header-copy">
+            <h1 id="page-title">Build with Changlong</h1>
+            <p>Please enter your details to register as a partner.</p>
+          </div>
+        </header>
+
+        <form id="lead-form" novalidate>
+          <div class="fields">
+            <label class="field">
+              <span>FULL NAME</span>
+              <input type="text" name="full_name" autocomplete="name"
+                     maxlength="160" placeholder="Enter your full name..." required>
+            </label>
+
+            <label class="field">
+              <span>EMAIL ADDRESS</span>
+              <input type="email" name="email" autocomplete="email"
+                     maxlength="254" placeholder="Enter your email..." required>
+            </label>
+
+            <label class="field">
+              <span>PHONE</span>
+              <input type="tel" name="phone" autocomplete="tel"
+                     maxlength="80" placeholder="Enter your phone...">
+            </label>
+
+            <label class="field">
+              <span>COMPANY</span>
+              <input type="text" name="company" autocomplete="organization"
+                     maxlength="220" placeholder="Enter your company name..." required>
+            </label>
+
+            <label class="field">
+              <span>POSITION</span>
+              <input type="text" name="position" autocomplete="organization-title"
+                     maxlength="180" placeholder="Enter your position...">
+            </label>
+
+            <label class="field">
+              <span>REGION</span>
+              <input type="text" name="region" maxlength="180"
+                     placeholder="Enter your region...">
+            </label>
+          </div>
+
+          <div class="actions">
+            <p>
+              Your data is used solely for marketing<br>
+              and is never shared with third parties.
+            </p>
+
+            <button id="confirm-button" type="submit">Confirm</button>
+          </div>
+
+          <p id="form-error" class="form-error" role="alert" hidden></p>
+        </form>
+
+        <a class="website" href="https://www.changlongflor.com/" target="_blank" rel="noopener">
+          <span class="website-icon">
+            <img src="/assets/logo.png" alt="">
+          </span>
+          <span class="website-text">visit our website</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

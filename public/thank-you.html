@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17130f">
+  <title>Thank You | Changlong</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/thank-you.css">
+</head>
+<body>
+  <main class="thank-page">
+    <img
+      class="thank-background"
+      src="/assets/thank-you-background.png"
+      width="2048"
+      height="1834"
+      alt=""
+      aria-hidden="true"
+    >
+
+    <section class="thank-card" aria-labelledby="thank-title">
+      <img
+        class="thank-card-art"
+        src="/assets/thank-you-card.png"
+        width="1432"
+        height="1012"
+        alt=""
+        aria-hidden="true"
+      >
+
+      <div class="thank-content">
+        <img class="thank-logo" src="/assets/logo.png" alt="Changlong">
+        <h1 id="thank-title">Thank you.</h1>
+        <p id="thank-message" class="thank-message">
+          Your registration has been received. We have sent the Changlong catalogue to your email.
+        </p>
+        <div class="thank-actions">
+          <a class="catalogue-button" href="/assets/Changlong-Catalogue.pdf" target="_blank" rel="noopener">
+            View catalogue
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <p id="email-warning" class="email-warning" role="status" hidden>
+      Your registration was saved, but the automatic email could not be sent. You can still open the catalogue above.
+    </p>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const emailFailed = params.get("email") === "failed";
+
+    if (emailFailed) {
+      document.getElementById("thank-message").textContent =
+        "Your registration has been received. You can view the Changlong catalogue below.";
+      document.getElementById("email-warning").hidden = false;
+    }
+  </script>
+</body>
+</html>
