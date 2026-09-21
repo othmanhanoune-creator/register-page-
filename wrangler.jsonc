@@ -22,6 +22,11 @@
     "MAIL_FROM_NAME": "Changlong",
     "EMAIL_SUBJECT": "Thank you for visiting Changlong",
 
+    "CONTACT_NAME": "Adam",
+    "CONTACT_ROLE": "Business Development",
+    "CONTACT_EMAIL": "export@changlongflor.com",
+    "CONTACT_PHONE": "15205149312",
+
     "CATALOGUE_PATH": "/assets/Changlong-Catalogue.pdf",
     "CATALOGUE_FILENAME": "Changlong-Catalogue.pdf"
   }
