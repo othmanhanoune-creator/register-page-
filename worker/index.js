@@ -373,8 +373,8 @@ async function sendCatalogueEmailViaAlibabaSMTP(request, env, data) {
   const fromName = clean(env.MAIL_FROM_NAME || "Changlong", 100);
   const subject = env.EMAIL_SUBJECT || "Thank you for visiting Changlong";
 
-  const textBody = buildThankYouText(lead.full_name);
-  const htmlBody = buildThankYouEmail(lead.full_name);
+  const textBody = buildThankYouText(lead.full_name, env);
+  const htmlBody = buildThankYouEmail(lead.full_name, env);
 
   const rawMessage = buildMimeMessage({
     fromName,
@@ -646,7 +646,7 @@ async function logEmailMessage(env, key, data) {
     sender_email: clean(env.EXPORT_SMTP_USER || "", 254),
     recipient_email: lead.email,
     subject: emailResult.subject || env.EMAIL_SUBJECT || "Thank you for visiting Changlong",
-    body_text: emailResult.text || buildThankYouText(lead.full_name),
+    body_text: emailResult.text || buildThankYouText(lead.full_name, env),
     status: emailResult.ok ? "sent" : "failed",
     provider: emailResult.provider || "alibaba_smtp",
     provider_message_id: emailResult.provider_message_id || null,
@@ -667,8 +667,12 @@ async function logEmailMessage(env, key, data) {
   }
 }
 
-function buildThankYouEmail(name) {
+function buildThankYouEmail(name, env) {
   const safeName = escapeHtml(name);
+  const contactName = escapeHtml(env.CONTACT_NAME || "Adam");
+  const contactRole = escapeHtml(env.CONTACT_ROLE || "Business Development");
+  const contactEmail = escapeHtml(env.CONTACT_EMAIL || env.EXPORT_SMTP_USER || "export@changlongflor.com");
+  const contactPhone = escapeHtml(env.CONTACT_PHONE || "15205149312");
 
   return `
   <div style="font-family:Arial,sans-serif;max-width:620px;margin:auto;color:#172033;line-height:1.65">
@@ -676,20 +680,38 @@ function buildThankYouEmail(name) {
     <p>Thank you for connecting with Changlong.</p>
     <p>Our latest flooring catalogue is attached to this email for your reference.</p>
     <p>Our team will be happy to discuss products, specifications, samples and cooperation opportunities with you.</p>
-    <p style="margin-top:28px">Best regards,<br><strong>Changlong Flooring</strong></p>
+    <p>If you have any questions, need additional information, or have any problem opening the catalogue, please contact me directly at <a href="mailto:${contactEmail}" style="color:#244f3e">${contactEmail}</a>.</p>
+    <p style="margin-top:28px">
+      Best regards,<br>
+      <strong>${contactName}</strong><br>
+      ${contactRole}<br>
+      Changlong Flooring<br>
+      Email: <a href="mailto:${contactEmail}" style="color:#244f3e">${contactEmail}</a><br>
+      Phone: ${contactPhone}
+    </p>
   </div>`;
 }
 
-function buildThankYouText(name) {
+function buildThankYouText(name, env) {
+  const contactName = env.CONTACT_NAME || "Adam";
+  const contactRole = env.CONTACT_ROLE || "Business Development";
+  const contactEmail = env.CONTACT_EMAIL || env.EXPORT_SMTP_USER || "export@changlongflor.com";
+  const contactPhone = env.CONTACT_PHONE || "15205149312";
+
   return [
     `Thank you, ${name}.`,
     "",
     "Thank you for connecting with Changlong.",
     "Our latest flooring catalogue is attached to this email for your reference.",
     "Our team will be happy to discuss products, specifications, samples and cooperation opportunities with you.",
+    `If you have any questions, need additional information, or have any problem opening the catalogue, please contact me directly at ${contactEmail}.`,
     "",
     "Best regards,",
-    "Changlong Flooring"
+    contactName,
+    contactRole,
+    "Changlong Flooring",
+    `Email: ${contactEmail}`,
+    `Phone: ${contactPhone}`
   ].join("\n");
 }
 
