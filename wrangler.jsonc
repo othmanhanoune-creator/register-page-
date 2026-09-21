@@ -10,6 +10,14 @@
     "binding": "ASSETS"
   },
 
+  "secrets": {
+    "required": [
+      "SUPABASE_SECRET_KEY",
+      "EXPORT_SMTP_USER",
+      "EXPORT_SMTP_PASSWORD"
+    ]
+  },
+
   "vars": {
     "SUPABASE_URL": "https://oeaflajojyxsexrusqpc.supabase.co",
 
