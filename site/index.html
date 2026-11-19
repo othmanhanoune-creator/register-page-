@@ -1,0 +1,1072 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Independent, source-linked UAE coffee-market research with reproducible acquisition economics, promotion experiments and an interactive decision model.">
+  <title>UAE Coffee Growth | Market Intelligence & Unit Economics</title>
+  <style>:root{--text:#1c2726;--strong:#142421;--muted:#657571;--weak:#86918d;--bg:#f4f6f4;--surface:#fff;--border:#dce3df;--line:#e8edeb;--teal:#1b6559;--teal-muted:#edf5f2;--deep:#143d36;--rust:#a6543a;--rust-soft:#faf0e9;--sidebar:#f9faf9;--mono:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;--font:"Aptos","Segoe UI",Inter,Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed}a{color:var(--teal)}a:hover{text-decoration:underline}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #72ab96;outline-offset:3px}.skip-link{position:fixed;z-index:20;top:-60px;left:20px;background:white;padding:10px 16px}.skip-link:focus{top:12px}h1,h2,h3,p{margin-top:0}.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.workspace{display:grid;grid-template-columns:242px minmax(0,1fr);min-height:100vh}.sidebar{background:var(--sidebar);border-right:1px solid var(--border);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;z-index:10;padding:29px 15px 24px}.identity{display:flex;align-items:center;gap:11px;color:var(--text);text-decoration:none;padding:0 12px 39px}.identity:hover{text-decoration:none}.identity-symbol{height:34px;width:34px;display:flex;align-items:flex-end;gap:3px;border:1px solid #324a44;background:#153e35;padding:8px 7px}.identity-symbol span{width:4px;background:#cee1d2;display:block}.identity-symbol span:nth-child(1){height:9px}.identity-symbol span:nth-child(2){height:17px}.identity-symbol span:nth-child(3){height:13px;background:#efb38d}.identity-copy strong{display:block;font-size:15px;letter-spacing:.12em;font-weight:750;line-height:1.1}.identity-copy small{display:block;margin-top:5px;color:#79857e;letter-spacing:.055em;font-size:10px}.nav-group-title{font:10px var(--mono);color:#89958f;letter-spacing:.11em;padding:0 12px;margin-bottom:12px}.side-nav{display:grid;gap:3px}.side-nav a{display:flex;gap:14px;align-items:center;padding:12px 13px;border-radius:5px;color:#52635d;font-size:12.5px;font-weight:600;text-decoration:none;transition:background .15s,color .15s}.side-nav a:hover{background:#ecf1ee;color:#1a3931;text-decoration:none}.side-nav a.active{background:#e5eeea;color:#185d4d}.nav-num{font:10px var(--mono);color:#94a09a}.side-nav a.active .nav-num{color:#3e8771}.sidebar-bottom{margin-top:auto;border-top:1px solid var(--border);padding:22px 12px 0;color:var(--muted)}.sidebar-label{font:10px var(--mono);letter-spacing:.075em;font-weight:700;color:#435851}.side-dot,.status-dot,.decision-light{display:inline-block;width:7px;height:7px;border-radius:100%;background:#3b9b75;margin-right:6px}.sidebar-bottom p{font-size:12px;line-height:1.65;margin:9px 0 22px}.sidebar-meta{display:flex;justify-content:space-between;border-top:1px solid var(--border);padding:11px 0;font-size:11px}.sidebar-meta span{font:10px var(--mono);color:#85918b}.sidebar-meta b{font-weight:600;color:#394b45}
+.main-frame{min-width:0}.topbar{height:68px;padding:0 clamp(24px,4vw,62px);background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:0;z-index:8}.breadcrumbs{display:flex;align-items:center;gap:10px;color:#7d8b83;font-size:12px;white-space:nowrap}.breadcrumbs strong{color:#2c423b;font-weight:700}.crumb-slash{color:#c2cac5}.top-actions{display:flex;align-items:center;gap:9px}.top-status{font:10px var(--mono);color:#60776e;white-space:nowrap;margin-right:13px}.top-button,.small-button{border:1px solid #cfdad4;background:white;border-radius:5px;padding:8px 12px;font-size:11.5px;font-weight:700;color:#2b4c41;display:inline-flex;align-items:center;gap:9px;justify-content:center}.top-button:hover,.small-button:hover{background:#f2f7f4;text-decoration:none}.top-button.primary{background:#1b5346;border-color:#1b5346;color:white}.top-button.primary:hover{background:#154339}.btn-icon{font-size:17px;line-height:1}.mobile-toggle{display:none}
+main{max-width:1530px;margin:auto;padding:0 clamp(24px,4vw,62px)}.overview-section{padding-top:49px}.report-index,.small-eyebrow{font:10px var(--mono);font-weight:700;letter-spacing:.135em;color:#65786e}.index-accent{display:inline-block;width:17px;height:3px;vertical-align:middle;background:#ba7446;margin-right:7px}.index-divider{margin:0 8px;color:#b2bcb7}.overview-heading{display:flex;justify-content:space-between;align-items:end;gap:35px;margin:26px 0 32px}.overview-heading h1{font-size:clamp(46px,5.25vw,76px);line-height:1.045;letter-spacing:-.065em;font-weight:720;margin:0 0 18px;color:#162f29}.overview-heading h1 em{font-style:normal;color:#53796c}.lead{max-width:690px;color:#64736f;font-size:17px;line-height:1.65;margin:0}.report-stamp{border-left:1px solid var(--border);padding:7px 0 7px 25px;min-width:155px}.stamp-name{font:10px var(--mono);letter-spacing:.06em;color:#687d73}.stamp-value{font-size:41px;line-height:1.1;letter-spacing:-.05em;color:#234839;font-weight:650;margin:10px 0 13px}.stamp-slash{font-weight:300;color:#a7b9b0;padding:0 3px}.stamp-sub{color:#60766a;font-size:11px;line-height:1.7}.metadata-strip{border:1px solid var(--border);background:white;display:grid;grid-template-columns:1.16fr 1.25fr 1.36fr .82fr;border-radius:7px;overflow:hidden}.metadata-strip>div{padding:19px 21px;border-right:1px solid var(--line)}.metadata-strip>div:last-child{border-right:0}.metadata-strip span{display:block;font:10px var(--mono);letter-spacing:.07em;color:#82918a;margin-bottom:8px}.metadata-strip strong{font-size:12px;font-weight:650;color:#28443a}.disclosure{display:flex;align-items:flex-start;gap:20px;background:#edf3f0;border:1px solid #d7e5dd;border-radius:6px;padding:15px 18px;margin:17px 0 48px}.disclosure-marker{white-space:nowrap;font:10px var(--mono);font-weight:750;letter-spacing:.08em;color:#315d4c;margin-top:3px}.disclosure p{font-size:12px;line-height:1.7;color:#456357;margin:0}.disclosure strong{font-weight:720}
+.section-label{font:11px var(--mono);color:#9aada3;letter-spacing:.04em;display:flex;align-items:center;gap:12px}.section-label span{font-family:var(--font);font-weight:700;font-size:12px;letter-spacing:0;color:#5b7368}.executive-layout{display:grid;grid-template-columns:1.35fr .8fr;gap:18px;margin-top:18px}.executive-summary{padding:37px 39px;border:1px solid var(--border);background:#fff;border-radius:7px;display:flex;flex-direction:column}.executive-summary h2{max-width:570px;font-size:clamp(25px,3vw,38px);letter-spacing:-.048em;line-height:1.15;color:#192e28;font-weight:660;margin:14px 0 17px}.executive-summary>p{color:#61726b;max-width:660px;font-size:13px;line-height:1.8}.quick-facts{margin-top:auto;padding-top:27px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.quick-facts>div{border-top:1px solid var(--border);padding-top:17px}.quick-facts span{font:9px var(--mono);letter-spacing:.07em;color:#87958e;display:block}.quick-facts b{font-size:14px;display:block;margin-top:7px;color:#263c33}.decision-panel{background:#173d34;border:1px solid #173d34;color:#fff;border-radius:7px;padding:34px 29px}.decision-kicker{font:10px var(--mono);color:#c3d7cb;letter-spacing:.075em}.decision-light{background:#98cdb0}.decision-score{font-size:clamp(33px,3vw,46px);font-weight:650;letter-spacing:-.05em;margin:35px 0 0;line-height:1.1}.decision-caption{color:#c6d9cd;font-size:12px;line-height:1.55;margin:13px 0 35px}.decision-line{display:flex;justify-content:space-between;gap:10px;border-top:1px solid #42645a;padding:15px 0;font-size:12px}.decision-line span{color:#c4d8cc}.decision-line strong{font-weight:700;white-space:nowrap}.decision-advice{margin-top:11px;padding:14px 0 0;color:#bed4c6;font-size:11.5px;line-height:1.75;border-top:1px solid #42645a}
+.report-section{padding-top:75px;padding-bottom:72px;border-bottom:1px solid var(--border)}.section-heading{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:24px}.section-heading h2{font-size:clamp(27px,3vw,37px);line-height:1.16;letter-spacing:-.047em;font-weight:660;color:#183229;margin:12px 0}.section-heading p{max-width:690px;font-size:13px;color:#667771;margin:0;line-height:1.65}.section-aside{text-align:right;color:#8a9a92;font:10px var(--mono);letter-spacing:.07em;white-space:nowrap;line-height:1.8}.section-aside strong{display:block;font:12px var(--font);color:#435b50;font-weight:650;letter-spacing:0}
+.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:15px}.metric-box{background:white;border:1px solid var(--border);padding:22px 22px 19px;border-radius:6px;min-width:0}.metric-box .key{font:10px var(--mono);letter-spacing:.015em;color:#73877d;min-height:33px}.metric-box .value{font-size:clamp(23px,2.5vw,35px);color:#1b362d;font-weight:700;letter-spacing:-.035em;line-height:1.2;margin:8px 0}.metric-box .detail{font-size:11px;color:#85958b}.metric-box .value.negative{color:var(--rust)}.analytics-grid{display:grid;grid-template-columns:1.23fr .77fr;gap:15px}.module{border:1px solid var(--border);background:white;border-radius:7px;padding:24px;min-width:0}.full-module{margin-top:15px}.module-head{display:flex;justify-content:space-between;gap:16px;align-items:start;margin-bottom:22px}.module-head.align-center{align-items:center}.module-head h3{font-size:16px;line-height:1.3;font-weight:720;color:#20352e;margin:0 0 7px;letter-spacing:-.015em}.module-head p{font-size:12px;color:#819089;margin:0}.source-pill{font:9px var(--mono);letter-spacing:.075em;color:#766b55;background:#f5f0e8;padding:6px 8px;border:1px solid #ece4d6;border-radius:3px;white-space:nowrap}.source-pill.observed{background:#e9f3ec;border-color:#d8eadd;color:#2f6b52}.horizontal-zero-chart{display:grid;gap:21px;padding:12px 0 16px}.chart-row{display:grid;grid-template-columns:100px minmax(80px,1fr) 96px;align-items:center;gap:14px}.chart-label{font-size:12px;font-weight:700;color:#4c5f56}.zero-track{height:20px;position:relative;background:linear-gradient(to right,#faf8f6 0%,#faf8f6 50%,#f3f7f5 50%,#f3f7f5 100%);border-radius:3px}.zero-track:before{content:"";position:absolute;top:-6px;bottom:-6px;left:50%;width:1px;background:#9bb1a6;z-index:2}.zero-bar{position:absolute;height:12px;top:4px;background:#367764;border-radius:2px}.zero-bar.loss{background:#b7745c}.chart-amount{font:12px var(--mono);text-align:right;font-weight:700;color:#386a5a}.chart-amount.loss{color:#ad654b}.chart-axis{display:flex;justify-content:space-between;margin:3px 110px 0 114px;color:#8d9c94;font:10px var(--mono)}.module-note{font-size:11.5px;color:#87948d;line-height:1.6;border-top:1px solid var(--line);margin-top:21px;padding-top:15px}.funnel-stack{display:grid;gap:1px;background:#e8eeeb;border:1px solid #e8eeeb;overflow:hidden;border-radius:5px}.funnel-row{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#f9fbf9;padding:12px 14px}.funnel-row>div{display:flex;align-items:center;gap:12px}.funnel-row .stage{font:10px var(--mono);color:#9baca3}.funnel-row .stage-name{font-size:12px;font-weight:650;color:#51675a}.funnel-row .stage-value{font:15px var(--mono);font-weight:650;color:#2d4c3e}.funnel-row .stage-share{font:10px var(--mono);color:#7b8f82;min-width:45px;text-align:right}.module-tools{display:flex;gap:8px}.field,.search-input{border:1px solid #d5dfd9;background:white;border-radius:4px;min-height:34px;padding:7px 11px;font-size:12px;color:#435b50}.field{max-width:180px}.small-button{font-size:11px;min-height:34px}.table-scroll{overflow:auto}.data-table{border-collapse:collapse;width:100%;min-width:680px;font-size:12px}.data-table th{border-top:1px solid var(--line);border-bottom:1px solid var(--border);padding:13px 12px;text-align:left;background:#f8faf9;color:#74887c;font:10px var(--mono);letter-spacing:.035em;white-space:nowrap}.data-table th button{border:0;background:none;padding:0;color:inherit;font:inherit;white-space:nowrap;text-align:left}.data-table th button:hover{color:#1d6556}.data-table td{padding:14px 12px;border-bottom:1px solid #ebf0ed;color:#52675a}.data-table td:first-child{font-weight:700;color:#31483d}.data-table tr:last-child td{border-bottom:0}.data-table td.num,.data-table th.num{text-align:right;white-space:nowrap}.data-table td.num button{float:right}.num.good{color:#227354!important;font-weight:700}.num.bad{color:#b3614a!important;font-weight:700}.table-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:#8a968f}.table-footer a{font-weight:700;text-decoration:none;font-size:11px}.table-footer a:hover{text-decoration:underline}
+.market-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:15px}.search-row{display:flex;gap:9px;margin:0 0 15px}.search-input{flex:1;min-width:0;padding-left:12px}.menu-scroll{max-height:454px;overflow:auto}.menu-table{min-width:460px}.menu-table thead{position:sticky;top:0}.menu-table td:first-child{font-weight:650}.membership-list{display:grid;gap:12px}.membership-item{padding:18px;border:1px solid var(--line);border-radius:5px;background:#fcfdfc}.membership-top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:7px}.membership-top strong{font-size:13px;color:#294339}.membership-top a{font:10px var(--mono);text-decoration:none}.membership-desc{font-size:12px;color:#65786b}.membership-conditions{margin-top:11px;font-size:11px;line-height:1.6;color:#8a978f}.research-note{background:#faf8f3;border:1px solid #e9e3d5;border-radius:5px;padding:15px;display:flex;gap:13px;margin-top:19px;color:#6b6756}.research-note .note-icon{font:13px var(--mono);font-weight:700;border:1px solid #d1c7ab;border-radius:50%;width:21px;height:21px;line-height:19px;text-align:center;flex:none}.research-note strong{color:#6a5d46;font-size:12px}.research-note p{font-size:11.5px;line-height:1.65;margin:5px 0 0}.research-note.underneath{margin-top:15px}
+.scenario-grid{display:grid;grid-template-columns:1.17fr .83fr;gap:15px}.scenario-buttons{display:flex;flex-wrap:wrap;gap:7px;border:0;margin:0 0 25px;padding:0}.scenario-buttons legend{font-size:11px;font-weight:700;color:#61756c;padding:0;margin-bottom:10px}.segment{padding:9px 12px;border:1px solid #d9e2dd;background:#fff;border-radius:4px;color:#4b6156;font-size:12px;font-weight:700;text-align:left;line-height:1.25}.segment span{font-size:10px;font-weight:500;color:#89978f;display:block}.segment.active{background:#e9f2ed;border-color:#7ba890;color:#1d6551}.segment.active span{color:#56826b}.scenario-chart{display:grid;gap:13px}.price-row{display:grid;grid-template-columns:60px minmax(90px,1fr) 120px;gap:11px;align-items:center;font-size:12px}.price-row .price{font:12px var(--mono);color:#60786c}.price-row .price-bar-bg{height:19px;background:#eff3ef;border-radius:2px;overflow:hidden}.price-row .price-bar{height:100%;background:#6a9b88;border-radius:2px}.price-row.best .price-bar{background:#1d6e5a}.price-row .price-result{font:11px var(--mono);text-align:right;color:#526a5d}.price-row.best .price-result{font-weight:700;color:#1c6e55}.scenario-result{font-size:12px;background:#f2f6f3;border-left:3px solid #4c927c;padding:13px 15px;color:#41665a;margin-top:25px;line-height:1.65}.scenario-result b{color:#265647}.slider-header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:29px 0 12px}.slider-header label{font-size:12px;font-weight:650;color:#52695d}.slider-header output{font:16px var(--mono);font-weight:750;color:#245a49}.range{width:100%;accent-color:#2c755e}.range-labels{display:flex;justify-content:space-between;font:10px var(--mono);color:#9ba99f;margin:5px 0 30px}.cac-list{display:grid;border:1px solid var(--line);border-radius:5px;overflow:hidden}.cac-row{display:grid;grid-template-columns:1fr 72px 104px;gap:8px;padding:13px 14px;background:#fff;border-bottom:1px solid var(--line);font-size:12px;align-items:center}.cac-row:last-child{border-bottom:0}.cac-row span{color:#435d4f;font-weight:650}.cac-row small{font:10px var(--mono);color:#829188;text-align:right}.cac-row strong{font:12px var(--mono);text-align:right}.cac-row strong.good{color:#29745a}.cac-row strong.bad{color:#b4644c}.text-button{border:0;background:none;color:#2e6955;font-size:12px;font-weight:700;padding:0;margin-top:19px}.text-button:hover{text-decoration:underline}
+.experiment-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.arm-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}.arm{background:#f4f6f4;border:1px solid #e3e9e4;padding:22px;border-radius:5px}.arm.offer{background:#edf5f0;border-color:#daebe0}.arm span{font:10px var(--mono);color:#78877e}.arm strong{display:block;color:#244e3e;font-size:40px;letter-spacing:-.06em;line-height:1.3;margin:7px 0}.arm small{font-size:11px;color:#85958a}.lift-detail{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);margin-top:25px;padding-top:17px;color:#63786b;font-size:12px}.lift-detail b{color:#2a775a;font-size:17px}.lift-sub{font:11px var(--mono);color:#88988e;margin-top:7px}.verdict-value{font-size:49px;font-weight:700;letter-spacing:-.06em;color:#ad6249;line-height:1.1;margin-top:20px}.ci-graphic{height:50px;margin:10px 0 7px}.ci-graphic svg{width:100%;height:50px}.verdict-word{font:10px var(--mono);font-weight:700;letter-spacing:.085em;color:#ac614c;margin:13px 0}.finding-text{font-size:12px;line-height:1.7;color:#687b70;margin:0}.message-tabs{display:flex;flex-wrap:wrap;gap:7px;padding-bottom:18px;border-bottom:1px solid var(--border)}.message-tab{font-size:12px;font-weight:650;color:#657a6e;background:#f7faf8;border:1px solid #e0e9e2;border-radius:4px;padding:9px 13px}.message-tab[aria-selected="true"]{background:#e4f0e8;color:#23624b;border-color:#a4c4b0}.language-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:17px}.language-card{min-height:185px;border:1px solid var(--line);padding:25px;border-radius:5px;background:#fbfcfb}.arabic-card{background:#f9fbf8}.language-title{display:flex;justify-content:space-between;color:#89998c;font:10px var(--mono);letter-spacing:.055em}.language-card p{font-size:20px;font-weight:500;color:#253b30;line-height:1.6;margin:26px 0 0}.arabic-card p{font-family:Tahoma,Arial,sans-serif;font-size:23px;line-height:1.9;text-align:right;direction:rtl}.review-line{display:flex;gap:16px;align-items:baseline;margin-top:22px;font-size:12px;color:#6c8072}.review-line strong{color:#425e4f;white-space:nowrap}
+.sources-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.reference-list,.action-list{list-style:none;padding:0;margin:0}.reference-list li{border-bottom:1px solid var(--line);display:grid;grid-template-columns:42px 1fr;align-items:center;padding:14px 0;gap:12px}.reference-list li:last-child{border-bottom:0}.reference-list span{font:10px var(--mono);color:#8ca095}.reference-list a{display:flex;justify-content:space-between;gap:10px;text-decoration:none;color:#375647;font-size:12px;font-weight:650}.reference-list a:hover{text-decoration:underline}.reference-list b{font-weight:400}.action-list li{display:flex;gap:16px;border-bottom:1px solid var(--line);padding:12px 0}.action-list li:last-child{border-bottom:0}.action-list li>span{font:11px var(--mono);color:#95aa9c}.action-list strong{font-size:12px;color:#415d4f}.action-list p{margin:5px 0 0;color:#82948a;font-size:11.5px;line-height:1.55}.closing-disclaimer{margin-top:22px;font-size:11px;color:#94a298;line-height:1.6}.main-footer{padding:23px clamp(24px,4vw,62px);display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--border);font:10px var(--mono);letter-spacing:.06em;color:#7d8f83}.main-footer span{color:#b1c0b5}
+@media(max-width:1250px){.workspace{grid-template-columns:206px minmax(0,1fr)}.sidebar{padding:24px 10px}.side-nav a{font-size:12px;padding:11px}.topbar{padding:0 26px}main{padding:0 26px}.executive-summary{padding:30px}.decision-panel{padding:27px 23px}.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.analytics-grid,.market-grid,.scenario-grid{grid-template-columns:1fr 1fr}.section-aside{display:none}.main-footer{padding:22px 26px}}
+@media(max-width:980px){.workspace{grid-template-columns:1fr}.sidebar{position:fixed;transform:translateX(-102%);transition:transform .2s ease;width:265px;box-shadow:10px 0 45px rgba(0,0,0,.04)}.sidebar.open{transform:translateX(0)}.mobile-toggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:34px;height:34px;border:1px solid var(--border);border-radius:4px;background:white;padding:8px;flex:none}.mobile-toggle span{display:block;height:1.5px;background:#2f5246}.mobile-backdrop{position:fixed;inset:0;background:#15221ca3;z-index:9}.mobile-backdrop:not([hidden]){display:block}.topbar{gap:12px}.breadcrumbs{margin-right:auto}.executive-layout{grid-template-columns:1fr 1fr}.analytics-grid,.market-grid,.scenario-grid{grid-template-columns:1fr}.experiment-grid,.sources-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.topbar{height:61px;padding:0 17px}.crumb-last,.top-status,.top-button:first-of-type{display:none}.top-button.primary{padding:7px 10px;font-size:11px}.breadcrumbs{font-size:11px;gap:7px}main{padding:0 17px}.overview-section{padding-top:32px}.overview-heading{margin:22px 0;align-items:start}.overview-heading h1{font-size:47px}.lead{font-size:14px}.report-stamp{display:none}.metadata-strip{grid-template-columns:1fr 1fr}.metadata-strip>div{padding:13px 15px}.metadata-strip>div:nth-child(2){border-right:0}.metadata-strip>div:nth-child(-n+2){border-bottom:1px solid var(--line)}.metadata-strip span{font-size:9px}.metadata-strip strong{font-size:11px}.disclosure{display:block;margin-bottom:36px;padding:13px}.disclosure-marker{display:block;margin-bottom:5px}.executive-layout,.language-grid,.experiment-grid,.sources-grid{grid-template-columns:1fr}.executive-summary{padding:24px}.decision-panel{padding:25px}.executive-summary h2{font-size:29px}.quick-facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.quick-facts b{font-size:12px}.quick-facts span{font-size:8px}.report-section{padding:48px 0}.section-heading h2{font-size:30px}.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.metric-box{padding:15px}.metric-box .value{font-size:23px}.module{padding:17px}.module-head{gap:10px;flex-wrap:wrap}.chart-row{grid-template-columns:76px minmax(75px,1fr) 80px;gap:7px}.chart-label{font-size:11px}.chart-amount{font-size:10px}.chart-axis{margin:3px 91px 0 83px}.table-footer{flex-wrap:wrap}.menu-scroll{max-height:420px}.field{max-width:135px}.section-aside{display:none}.source-pill{font-size:8px}.price-row{grid-template-columns:53px minmax(75px,1fr) 98px;gap:6px}.price-row .price-result{font-size:10px}.scenario-buttons{gap:6px}.segment{font-size:11px;padding:8px}.arm{padding:17px}.arm strong{font-size:33px}.verdict-value{font-size:40px}.language-card{min-height:150px}.language-card p{font-size:18px}.arabic-card p{font-size:21px}.review-line{display:block}.review-line strong{display:block;margin-bottom:5px}.main-footer{padding:22px 17px;display:grid;font-size:9px}.module-tools{width:100%}.module-tools .field{flex:1;max-width:none}}
+@media print{.workspace{display:block}.sidebar,.topbar,.mobile-backdrop,.top-button,.module-tools,.search-row,.scenario-buttons,.range,.range-labels,.slider-header,.message-tabs,.text-button{display:none!important}.main-frame{width:100%}main{max-width:none;padding:0 18px}.overview-section{padding-top:18px}.overview-heading h1{font-size:39px}.overview-heading .lead{font-size:12px}.report-section{padding:28px 0;break-inside:avoid}.module,.metric-box,.executive-summary,.decision-panel{box-shadow:none;break-inside:avoid}.section-heading{break-after:avoid}.analytics-grid,.market-grid,.scenario-grid,.experiment-grid,.sources-grid,.executive-layout{grid-template-columns:1fr 1fr}.disclosure{margin-bottom:20px}.menu-scroll{max-height:none}body{background:white;print-color-adjust:exact;-webkit-print-color-adjust:exact}.main-footer{padding:15px 18px}a{text-decoration:none}}
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="workspace">
+    <aside class="sidebar" id="sidebar" aria-label="Report navigation">
+      <a class="identity" href="#overview" aria-label="Fieldwork Research home">
+        <span class="identity-symbol" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="identity-copy"><strong>FIELDWORK</strong><small>Research & Analytics</small></span>
+      </a>
+      <div class="nav-group-title">RESEARCH FILE / 01</div>
+      <nav class="side-nav" aria-label="Sections">
+        <a href="#overview" class="active" data-section="overview"><span class="nav-num">01</span>Executive overview</a>
+        <a href="#acquisition" data-section="acquisition"><span class="nav-num">02</span>Acquisition economics</a>
+        <a href="#market" data-section="market"><span class="nav-num">03</span>Market observations</a>
+        <a href="#scenario" data-section="scenario"><span class="nav-num">04</span>Scenario model</a>
+        <a href="#experiment" data-section="experiment"><span class="nav-num">05</span>Experiment review</a>
+        <a href="#localization" data-section="localization"><span class="nav-num">06</span>Localization</a>
+        <a href="#sources" data-section="sources"><span class="nav-num">07</span>Methods & sources</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <span class="side-dot"></span><span class="sidebar-label">INDEPENDENT CASE STUDY</span>
+        <p>Public market observations and fictional transaction data are kept separate throughout.</p>
+        <div class="sidebar-meta"><span>REGION</span><b>UAE · Dubai</b></div>
+        <div class="sidebar-meta"><span>AS OF</span><b>19 Nov 2026</b></div>
+      </div>
+    </aside>
+    <div class="main-frame">
+      <header class="topbar">
+        <button class="mobile-toggle" id="nav-toggle" type="button" aria-label="Open report navigation" aria-expanded="false" aria-controls="sidebar"><span></span><span></span><span></span></button>
+        <div class="breadcrumbs"><span>Market intelligence</span><span class="crumb-slash">/</span><strong>UAE coffee</strong><span class="crumb-slash">/</span><span class="crumb-last">Research file 01</span></div>
+        <div class="top-actions"><span class="top-status"><span class="status-dot"></span> Illustrative model</span><button class="top-button" id="csv-export" type="button" title="Export current channel economics as CSV"><span class="btn-icon" aria-hidden="true">↓</span> Export data</button><button class="top-button primary" id="print-report" type="button">Print report</button></div>
+      </header>
+      <main id="main">
+        <section id="overview" class="overview-section" aria-labelledby="report-title">
+          <div class="report-index"><span class="index-accent"></span> UAE / RETAIL INTELLIGENCE <span class="index-divider">·</span> INVESTMENT DECISION NOTE</div>
+          <div class="overview-heading"><div><h1 id="report-title">Dubai coffee growth<br><em>unit economics.</em></h1><p class="lead">A Dubai coffee-app growth case examining acquisition costs, repeat purchasing, promotion economics and market price signals.</p></div><div class="report-stamp"><div class="stamp-name">REPORT ID</div><div class="stamp-value">UAE<span class="stamp-slash">–</span>01</div><div class="stamp-sub">November 2026<br>90-day model horizon</div></div></div>
+          <div class="metadata-strip"><div><span>MARKET</span><strong>Dubai, United Arab Emirates</strong></div><div><span>ANALYSIS TYPE</span><strong>Acquisition · Retention · Pricing</strong></div><div><span>EVIDENCE</span><strong>Public prices + modeled scenarios</strong></div><div><span>STATUS</span><strong>Decision prototype</strong></div></div>
+          <div class="disclosure"><span class="disclosure-marker">DATA BOUNDARY</span><p><strong>Only dated competitor prices and publicly documented membership terms are observed.</strong> Customer events, channel results, margins, incentives, experiment responses and elasticity are simulated. No Luckin Coffee internal data is used.</p></div>
+          <div class="section-label">01 <span>Executive overview</span></div>
+          <div class="executive-layout">
+            <div class="executive-summary"><div class="small-eyebrow">INVESTMENT THESIS</div><h2>Optimize for contribution, not coupon-led conversion.</h2><p>Under the disclosed assumptions, organic and referral acquisition retain more 90-day contribution after acquisition cost. Paid social is below break-even. These are hypotheses for a measured market pilot—not observed channel performance.</p><div class="quick-facts"><div><span>MODEL HORIZON</span><b>90 days</b></div><div><span>PUBLIC PRICE SAMPLE</span><b id="observed-count">10 listings</b></div><div><span>SYNTHETIC COHORT</span><b id="customer-count">—</b></div></div></div>
+            <div class="decision-panel"><div class="decision-kicker"><span class="decision-light"></span> DECISION UNDER BASE ASSUMPTIONS</div><div class="decision-score" id="best-channel">—</div><div class="decision-caption">Highest expected 90-day contribution / acquired buyer</div><div class="decision-line"><span>Expected contribution</span><strong id="best-profit">—</strong></div><div class="decision-line"><span>Weakest channel</span><strong id="worst-channel">—</strong></div><div class="decision-advice" id="summary-advice"></div></div>
+          </div>
+        </section>
+
+        <section class="report-section" id="acquisition" aria-labelledby="acquisition-title">
+          <div class="section-heading"><div><div class="section-label">02 <span>Acquisition economics</span></div><h2 id="acquisition-title">Acquisition channel economics.</h2><p>Illustrative 90-day unit economics and a separately generated, customer-grain SQL cohort.</p></div><div class="section-aside">FINANCIAL VIEW <strong>AED / acquired buyer</strong></div></div>
+          <div class="metric-grid" id="metric-grid" aria-label="Acquisition overview metrics"></div>
+          <div class="analytics-grid">
+            <div class="module module-large"><div class="module-head"><div><h3>Contribution after acquisition</h3><p>Expected 90-day value, net of first-order incentives and CAC</p></div><span class="source-pill">MODELED</span></div><div class="horizontal-zero-chart" id="contribution-chart"></div><div class="module-note">Bars are centered at zero. Positive values represent modeled contribution after CAC; negative values represent modeled shortfall.</div></div>
+            <div class="module"><div class="module-head"><div><h3>Acquisition path</h3><p>Aggregated from fictional funnel events</p></div><span class="source-pill">SYNTHETIC</span></div><div class="funnel-stack" id="funnel-stack"></div><div class="module-note">Stages are monotonic within each modeled channel. These are not live campaign conversion rates.</div></div>
+          </div>
+          <div class="module full-module"><div class="module-head align-center"><div><h3>Cohort performance by channel</h3><p>30-day and 90-day repeat rates use acquired buyers as the denominator</p></div><div class="module-tools"><label class="visually-hidden" for="cohort-filter">Filter channels</label><select id="cohort-filter" class="field"><option value="all">All channels</option><option value="organic">Organic</option><option value="referral">Referral</option><option value="paid_social">Paid social</option><option value="marketplace">Marketplace</option></select><button class="small-button" id="cohort-download" type="button">Download CSV</button></div></div><div class="table-scroll"><table class="data-table" aria-label="Modeled customer cohort performance"><thead><tr><th><button type="button" data-sort="channel">Channel <span aria-hidden="true">↕</span></button></th><th class="num"><button type="button" data-sort="buyers">Buyers ↕</button></th><th class="num"><button type="button" data-sort="repeat30">30d repeat ↕</button></th><th class="num"><button type="button" data-sort="repeat90">90d repeat ↕</button></th><th class="num"><button type="button" data-sort="orders">90d orders / buyer ↕</button></th><th class="num"><button type="button" data-sort="margin">Net AED / buyer ↕</button></th></tr></thead><tbody id="cohort-table"></tbody></table></div><div class="table-footer"><span id="cohort-count">4 channels</span><span>Acquisition cost charged once per buyer · corporate overhead excluded</span></div></div>
+        </section>
+
+        <section class="report-section" id="market" aria-labelledby="market-title"><div class="section-heading"><div><div class="section-label">03 <span>Market observations</span></div><h2 id="market-title">Observed menu and delivery pricing.</h2><p>A dated audit of one Dubai delivery menu and publicly documented delivery memberships. Not a representative citywide benchmark.</p></div><div class="section-aside">OBSERVATION DATE <strong>19 November 2026</strong></div></div>
+          <div class="market-grid"><div class="module"><div class="module-head"><div><h3>Source-checked menu</h3><p>Tim Hortons · Town Square, Dubai · Deliveroo</p></div><span class="source-pill observed">OBSERVED</span></div><div class="search-row"><label class="visually-hidden" for="menu-search">Search menu products</label><input id="menu-search" class="search-input" type="search" placeholder="Find a drink…" autocomplete="off"><label class="visually-hidden" for="menu-category">Filter menu category</label><select id="menu-category" class="field"><option value="all">All products</option></select></div><div class="table-scroll menu-scroll"><table class="data-table menu-table"><thead><tr><th>Product</th><th>Category</th><th class="num">AED</th></tr></thead><tbody id="menu-table"></tbody></table></div><div class="table-footer"><span id="menu-count">10 observations</span><a href="https://deliveroo.ae/en/menu/dubai/dubai-town-square/tim-hortons-townsquare" target="_blank" rel="noopener noreferrer">Original listing ↗</a></div></div>
+          <div class="module"><div class="module-head"><div><h3>Delivery-channel conditions</h3><p>Memberships affect final out-of-pocket price</p></div><span class="source-pill observed">OBSERVED</span></div><div id="memberships" class="membership-list"></div><div class="research-note"><span class="note-icon">!</span><div><strong>Comparison limit</strong><p>Product size was not disclosed for sampled menu lines. A fair comparison must align cup size, VAT, delivery charges, location, basket minimum and subscription eligibility.</p></div></div></div></div>
+        </section>
+
+        <section class="report-section" id="scenario" aria-labelledby="scenario-title"><div class="section-heading"><div><div class="section-label">04 <span>Scenario model</span></div><h2 id="scenario-title">Pricing and CAC sensitivity.</h2><p>Explore modeled price sensitivity and acquisition cost pressure. Changing controls never alters the source observations or base-case data.</p></div><div class="section-aside">SIMULATION ENGINE <strong>No live customer inputs</strong></div></div>
+          <div class="scenario-grid"><div class="module"><div class="module-head"><div><h3>Price contribution scenario</h3><p>Contribution per 1,000 hypothetical app visits</p></div><span class="source-pill">MODELED</span></div><fieldset class="scenario-buttons"><legend>Assumed price elasticity</legend><button type="button" class="segment" data-elasticity="-0.8">−0.8 <span>Lower sensitivity</span></button><button type="button" class="segment active" data-elasticity="-1.3" aria-pressed="true">−1.3 <span>Central</span></button><button type="button" class="segment" data-elasticity="-1.8">−1.8 <span>Higher sensitivity</span></button></fieldset><div class="scenario-chart" id="price-chart"></div><div class="scenario-result" id="price-summary" aria-live="polite"></div></div>
+          <div class="module"><div class="module-head"><div><h3>Acquisition cost stress</h3><p>Expected day-90 contribution, relative to base CAC</p></div><span class="source-pill">MODELED</span></div><div class="slider-header"><label for="cac-slider">Change in CAC</label><output id="cac-output" for="cac-slider">+0%</output></div><input class="range" id="cac-slider" type="range" min="-30" max="50" step="5" value="0"><div class="range-labels"><span>−30%</span><span>Base</span><span>+50%</span></div><div id="cac-table" class="cac-list" aria-live="polite"></div><button type="button" id="reset-scenario" class="text-button">Reset scenarios ↺</button></div></div>
+        </section>
+
+        <section class="report-section" id="experiment" aria-labelledby="experiment-title"><div class="section-heading"><div><div class="section-label">05 <span>Experiment review</span></div><h2 id="experiment-title">Promotion holdout economics.</h2><p>An explicitly simulated 50:50 offer holdout. The question is whether incremental first orders pay for the discount.</p></div><div class="section-aside">DESIGN <strong id="experiment-size">16,000 synthetic visitors</strong></div></div><div class="experiment-grid"><div class="module"><div class="module-head"><div><h3>First-order conversion</h3><p>Control versus AED 4 first-order offer</p></div><span class="source-pill">SIMULATED</span></div><div class="arm-grid"><div class="arm"><span>CONTROL</span><strong id="control-rate">—</strong><small>No incentive</small></div><div class="arm offer"><span>TREATMENT</span><strong id="offer-rate">—</strong><small>AED 4 discount</small></div></div><div class="lift-detail"><span>Conversion lift</span><b id="conversion-lift">—</b></div><div class="lift-sub" id="conversion-ci"></div></div><div class="module finding-module"><div class="module-head"><div><h3>Unit-economic verdict</h3><p>Incremental contribution per exposed visitor</p></div><span class="source-pill">SIMULATED</span></div><div class="verdict-value" id="contribution-lift">—</div><div class="ci-graphic" id="ci-graphic" role="img" aria-label="Simulated contribution difference 95 percent confidence interval"></div><div class="verdict-word" id="experiment-decision"></div><p class="finding-text" id="experiment-explanation"></p></div></div><div class="research-note underneath"><span class="note-icon">i</span><div><strong>Before any real campaign</strong><p>Specify consent-eligible audiences, assignment unit, sample size, cancellation and refund treatment, control holdout, incrementality threshold and post-acquisition retention. The illustrative confidence interval measures generated observations—not uncertainty about real UAE customers.</p></div></div></section>
+
+        <section class="report-section" id="localization" aria-labelledby="localization-title"><div class="section-heading"><div><div class="section-label">06 <span>Localization</span></div><h2 id="localization-title">Arabic CRM message review.</h2><p>Working English and Arabic message examples with their actual use case and review conditions. No communications are sent.</p></div><div class="section-aside">REVIEW GATE <strong>Local editor + compliance</strong></div></div><div class="module"><div class="module-head"><div><h3>Message review desk</h3><p>Choose a scenario to examine the copy side by side</p></div><span class="source-pill">WORKING COPY</span></div><div class="message-tabs" id="message-tabs" role="tablist" aria-label="Message scenarios"></div><div class="language-grid"><div class="language-card"><div class="language-title"><span>ENGLISH</span><span>REFERENCE</span></div><p id="english-copy"></p></div><div class="language-card arabic-card"><div class="language-title"><span>العربية</span><span>UAE REVIEW</span></div><p id="arabic-copy" lang="ar" dir="rtl"></p></div></div><div class="review-line"><strong>Use case / review notes</strong><span id="message-context"></span></div><div class="module-note">No offer value, preparation time or delivery guarantee is introduced without a confirmed business policy. Native Arabic, brand and legal approvals remain mandatory.</div></div></section>
+
+        <section class="report-section sources-section" id="sources" aria-labelledby="sources-title"><div class="section-heading"><div><div class="section-label">07 <span>Methods & sources</span></div><h2 id="sources-title">Measurement plan and source register.</h2><p>Independent research, reproducible simulated transactions, source traceability and clear limits on each inference.</p></div><div class="section-aside">DOCUMENTED IN <strong>Repository source files</strong></div></div><div class="sources-grid"><div class="module"><div class="module-head"><div><h3>Source register</h3><p>First-party policy pages and dated public observations</p></div><span class="source-pill observed">EXTERNAL SOURCES</span></div><ol class="reference-list"><li><span>M01</span><a href="https://deliveroo.ae/en/menu/dubai/dubai-town-square/tim-hortons-townsquare" target="_blank" rel="noopener noreferrer">Tim Hortons · Dubai Town Square menu <b>↗</b></a></li><li><span>M02</span><a href="https://help.careem.com/hc/en-us/articles/18217510601363-Careem-Plus" target="_blank" rel="noopener noreferrer">Careem Plus · membership conditions <b>↗</b></a></li><li><span>M03</span><a href="https://www.talabat.com/uae/campaign/pro" target="_blank" rel="noopener noreferrer">talabat pro · membership description <b>↗</b></a></li><li><span>F01</span><a href="https://tax.gov.ae/en/faq.aspx?keyword=What+is+the+standard+rate+of+VAT+in+the+UAE%3F" target="_blank" rel="noopener noreferrer">UAE Federal Tax Authority · VAT <b>↗</b></a></li><li><span>R01</span><a href="https://investor.luckincoffee.com/news-releases/news-release-details/luckin-coffee-announces-third-quarter-2026-financial-results" target="_blank" rel="noopener noreferrer">Luckin Coffee · Q3 2026 corporate filing <b>↗</b></a></li></ol></div><div class="module"><div class="module-head"><div><h3>Operating questions for a live pilot</h3><p>What needs to be measured before budget approval</p></div><span class="source-pill">NEXT STEPS</span></div><ol class="action-list"><li><span>01</span><div><strong>Establish comparable prices</strong><p>Match SKU, size, outlet, fees and delivery eligibility in multiple Dubai catchments.</p></div></li><li><span>02</span><div><strong>Instrument buyer economics</strong><p>Connect events to orders, refunds, variable cost, CAC and repeat behavior.</p></div></li><li><span>03</span><div><strong>Run a holdout</strong><p>Optimize incremental contribution per eligible visitor, not redemptions alone.</p></div></li><li><span>04</span><div><strong>Validate localization</strong><p>Native UAE Arabic review, consent, offer disclosure and contact preferences.</p></div></li></ol></div></div><div class="closing-disclaimer">Research exercise only · No affiliation with or access to Luckin Coffee or competitor internal systems · Simulated customer data are not operational results</div></section>
+      </main>
+      <footer class="main-footer"><div>FIELDWORK <span> / </span> UAE COFFEE GROWTH ECONOMICS</div><div>CASE FILE 01 <span>·</span> 19 NOV 2026</div></footer>
+    </div>
+  </div>
+  <div class="mobile-backdrop" id="mobile-backdrop" hidden></div>
+  <script id="case-data" type="application/json">{
+  "metadata": {
+    "as_of": "2026-11-19",
+    "currency": "AED",
+    "portfolio_case": true,
+    "data_boundary": "Public cited menu and programme references; fully simulated customer metrics",
+    "price_observation": "One vendor, one delivery location; not a market pricing estimate"
+  },
+  "scenario_config": {
+    "description": "Independent UAE app-led coffee growth evaluation; all commercial inputs are illustrative and adjustable.",
+    "seed": 20261119,
+    "currency": "AED",
+    "observation_end": "2026-05-31",
+    "cohort_start": "2026-01-02",
+    "acquisition_window_days": 42,
+    "price_vat_inclusive": 22.0,
+    "vat_rate": 0.05,
+    "variable_costs_per_order": {
+      "ingredients": 5.5,
+      "packaging": 1.2,
+      "payment": 0.55,
+      "fulfilment": 2.1
+    },
+    "channels": {
+      "paid_social": {
+        "audience": 9200,
+        "click_rate": 0.125,
+        "install_rate": 0.6,
+        "signup_rate": 0.68,
+        "first_order_rate": 0.59,
+        "cac": 17.0,
+        "first_order_coupon": 7.0,
+        "repurchase_probabilities": [
+          0.27,
+          0.21,
+          0.17,
+          0.14
+        ],
+        "commission_rate": 0.0
+      },
+      "referral": {
+        "audience": 5200,
+        "click_rate": 0.215,
+        "install_rate": 0.69,
+        "signup_rate": 0.79,
+        "first_order_rate": 0.73,
+        "cac": 6.0,
+        "first_order_coupon": 5.0,
+        "repurchase_probabilities": [
+          0.36,
+          0.3,
+          0.24,
+          0.19
+        ],
+        "commission_rate": 0.0
+      },
+      "organic": {
+        "audience": 6000,
+        "click_rate": 0.175,
+        "install_rate": 0.72,
+        "signup_rate": 0.75,
+        "first_order_rate": 0.76,
+        "cac": 3.0,
+        "first_order_coupon": 0.0,
+        "repurchase_probabilities": [
+          0.33,
+          0.29,
+          0.22,
+          0.16
+        ],
+        "commission_rate": 0.0
+      },
+      "marketplace": {
+        "audience": 7000,
+        "click_rate": 0.14,
+        "install_rate": 0.65,
+        "signup_rate": 0.7,
+        "first_order_rate": 0.69,
+        "cac": 10.0,
+        "first_order_coupon": 3.0,
+        "repurchase_probabilities": [
+          0.23,
+          0.18,
+          0.14,
+          0.11
+        ],
+        "commission_rate": 0.16
+      }
+    },
+    "repurchase_days": [
+      10,
+      27,
+      52,
+      81
+    ],
+    "price_sensitivity": {
+      "reference_price": 22,
+      "reference_orders_per_1000_visits": 190,
+      "candidate_prices": [
+        18,
+        20,
+        22,
+        24,
+        26
+      ],
+      "elasticities": [
+        -0.8,
+        -1.3,
+        -1.8
+      ]
+    }
+  },
+  "synthetic_data": {
+    "customers": 1463,
+    "funnel_events": 38149,
+    "orders": 2772,
+    "note": "Generated demonstration data; no customer records or observed campaign results."
+  },
+  "funnel": [
+    {
+      "channel": "marketplace",
+      "impressions": 7000,
+      "clicks": 1005,
+      "installs": 652,
+      "signups": 454,
+      "acquired_buyers": 319
+    },
+    {
+      "channel": "organic",
+      "impressions": 6000,
+      "clicks": 1042,
+      "installs": 779,
+      "signups": 592,
+      "acquired_buyers": 434
+    },
+    {
+      "channel": "paid_social",
+      "impressions": 9200,
+      "clicks": 1136,
+      "installs": 687,
+      "signups": 478,
+      "acquired_buyers": 277
+    },
+    {
+      "channel": "referral",
+      "impressions": 5200,
+      "clicks": 1110,
+      "installs": 753,
+      "signups": 598,
+      "acquired_buyers": 433
+    }
+  ],
+  "channel_cohorts": [
+    {
+      "channel": "marketplace",
+      "cohort_month": "2026-01",
+      "buyers": 223,
+      "repeat_30d_rate": 0.3543,
+      "repeat_90d_rate": 0.5202,
+      "orders_per_buyer_90d": 1.632,
+      "net_contribution_per_buyer_aed": 1.07
+    },
+    {
+      "channel": "organic",
+      "cohort_month": "2026-01",
+      "buyers": 309,
+      "repeat_30d_rate": 0.4757,
+      "repeat_90d_rate": 0.6505,
+      "orders_per_buyer_90d": 1.935,
+      "net_contribution_per_buyer_aed": 19.45
+    },
+    {
+      "channel": "paid_social",
+      "cohort_month": "2026-01",
+      "buyers": 205,
+      "repeat_30d_rate": 0.4488,
+      "repeat_90d_rate": 0.5951,
+      "orders_per_buyer_90d": 1.805,
+      "net_contribution_per_buyer_aed": -2.73
+    },
+    {
+      "channel": "referral",
+      "cohort_month": "2026-01",
+      "buyers": 306,
+      "repeat_30d_rate": 0.5163,
+      "repeat_90d_rate": 0.6601,
+      "orders_per_buyer_90d": 2.013,
+      "net_contribution_per_buyer_aed": 12.59
+    },
+    {
+      "channel": "marketplace",
+      "cohort_month": "2026-02",
+      "buyers": 96,
+      "repeat_30d_rate": 0.3958,
+      "repeat_90d_rate": 0.5625,
+      "orders_per_buyer_90d": 1.781,
+      "net_contribution_per_buyer_aed": 2.3
+    },
+    {
+      "channel": "organic",
+      "cohort_month": "2026-02",
+      "buyers": 125,
+      "repeat_30d_rate": 0.576,
+      "repeat_90d_rate": 0.696,
+      "orders_per_buyer_90d": 2.024,
+      "net_contribution_per_buyer_aed": 20.48
+    },
+    {
+      "channel": "paid_social",
+      "cohort_month": "2026-02",
+      "buyers": 72,
+      "repeat_30d_rate": 0.3889,
+      "repeat_90d_rate": 0.5972,
+      "orders_per_buyer_90d": 1.778,
+      "net_contribution_per_buyer_aed": -3.04
+    },
+    {
+      "channel": "referral",
+      "cohort_month": "2026-02",
+      "buyers": 127,
+      "repeat_30d_rate": 0.5276,
+      "repeat_90d_rate": 0.7008,
+      "orders_per_buyer_90d": 2.142,
+      "net_contribution_per_buyer_aed": 14.09
+    }
+  ],
+  "channel_profit": [
+    {
+      "channel": "organic",
+      "buyers": 434,
+      "orders": 851,
+      "simulated_gross_collected_aed": 18722.0,
+      "contribution_before_acquisition_aed": 9873.64,
+      "acquisition_cost_aed": 1302.0,
+      "contribution_after_acquisition_aed": 8571.64
+    },
+    {
+      "channel": "referral",
+      "buyers": 433,
+      "orders": 888,
+      "simulated_gross_collected_aed": 17371.0,
+      "contribution_before_acquisition_aed": 8241.03,
+      "acquisition_cost_aed": 2598.0,
+      "contribution_after_acquisition_aed": 5643.03
+    },
+    {
+      "channel": "marketplace",
+      "buyers": 319,
+      "orders": 535,
+      "simulated_gross_collected_aed": 10813.0,
+      "contribution_before_acquisition_aed": 3648.15,
+      "acquisition_cost_aed": 3190.0,
+      "contribution_after_acquisition_aed": 458.15
+    },
+    {
+      "channel": "paid_social",
+      "buyers": 277,
+      "orders": 498,
+      "simulated_gross_collected_aed": 9017.0,
+      "contribution_before_acquisition_aed": 3931.32,
+      "acquisition_cost_aed": 4709.0,
+      "contribution_after_acquisition_aed": -777.68
+    }
+  ],
+  "city_segments": [
+    {
+      "city": "Abu Dhabi",
+      "channel": "marketplace",
+      "buyers": 93,
+      "repeat_90d": 0.5161,
+      "contribution_per_buyer_aed": 1.26
+    },
+    {
+      "city": "Abu Dhabi",
+      "channel": "organic",
+      "buyers": 110,
+      "repeat_90d": 0.7091,
+      "contribution_per_buyer_aed": 20.42
+    },
+    {
+      "city": "Abu Dhabi",
+      "channel": "paid_social",
+      "buyers": 77,
+      "repeat_90d": 0.6104,
+      "contribution_per_buyer_aed": -2.42
+    },
+    {
+      "city": "Abu Dhabi",
+      "channel": "referral",
+      "buyers": 102,
+      "repeat_90d": 0.6765,
+      "contribution_per_buyer_aed": 13.58
+    },
+    {
+      "city": "Dubai",
+      "channel": "marketplace",
+      "buyers": 180,
+      "repeat_90d": 0.55,
+      "contribution_per_buyer_aed": 1.76
+    },
+    {
+      "city": "Dubai",
+      "channel": "organic",
+      "buyers": 287,
+      "repeat_90d": 0.6516,
+      "contribution_per_buyer_aed": 19.64
+    },
+    {
+      "city": "Dubai",
+      "channel": "paid_social",
+      "buyers": 167,
+      "repeat_90d": 0.6048,
+      "contribution_per_buyer_aed": -2.82
+    },
+    {
+      "city": "Dubai",
+      "channel": "referral",
+      "buyers": 290,
+      "repeat_90d": 0.6621,
+      "contribution_per_buyer_aed": 12.84
+    },
+    {
+      "city": "Sharjah",
+      "channel": "marketplace",
+      "buyers": 46,
+      "repeat_90d": 0.5,
+      "contribution_per_buyer_aed": 0.51
+    },
+    {
+      "city": "Sharjah",
+      "channel": "organic",
+      "buyers": 37,
+      "repeat_90d": 0.6216,
+      "contribution_per_buyer_aed": 18.64
+    },
+    {
+      "city": "Sharjah",
+      "channel": "paid_social",
+      "buyers": 33,
+      "repeat_90d": 0.5152,
+      "contribution_per_buyer_aed": -3.63
+    },
+    {
+      "city": "Sharjah",
+      "channel": "referral",
+      "buyers": 41,
+      "repeat_90d": 0.7317,
+      "contribution_per_buyer_aed": 13.01
+    }
+  ],
+  "expected_channel_unit_economics": {
+    "paid_social": {
+      "first_order": 4.94,
+      "expected_repeat_orders_90d": 0.79,
+      "expected_orders_90d": 1.79,
+      "break_even_cac": 14.1,
+      "cac": 17.0,
+      "net_after_cac_90d": -2.9
+    },
+    "referral": {
+      "first_order": 6.84,
+      "expected_repeat_orders_90d": 1.09,
+      "expected_orders_90d": 2.09,
+      "break_even_cac": 19.49,
+      "cac": 6.0,
+      "net_after_cac_90d": 13.49
+    },
+    "organic": {
+      "first_order": 11.6,
+      "expected_repeat_orders_90d": 1.0,
+      "expected_orders_90d": 2.0,
+      "break_even_cac": 23.2,
+      "cac": 3.0,
+      "net_after_cac_90d": 20.2
+    },
+    "marketplace": {
+      "first_order": 5.85,
+      "expected_repeat_orders_90d": 0.66,
+      "expected_orders_90d": 1.66,
+      "break_even_cac": 11.29,
+      "cac": 10.0,
+      "net_after_cac_90d": 1.29
+    }
+  },
+  "price_sensitivity": [
+    {
+      "elasticity": -0.8,
+      "gross_price": 18,
+      "orders_per_1000_visits": 223.1,
+      "contribution_per_1000_visits": 1738.48
+    },
+    {
+      "elasticity": -0.8,
+      "gross_price": 20,
+      "orders_per_1000_visits": 205.1,
+      "contribution_per_1000_visits": 1988.53
+    },
+    {
+      "elasticity": -0.8,
+      "gross_price": 22,
+      "orders_per_1000_visits": 190.0,
+      "contribution_per_1000_visits": 2204.45
+    },
+    {
+      "elasticity": -0.8,
+      "gross_price": 24,
+      "orders_per_1000_visits": 177.2,
+      "contribution_per_1000_visits": 2393.79
+    },
+    {
+      "elasticity": -0.8,
+      "gross_price": 26,
+      "orders_per_1000_visits": 166.2,
+      "contribution_per_1000_visits": 2561.94
+    },
+    {
+      "elasticity": -1.3,
+      "gross_price": 18,
+      "orders_per_1000_visits": 246.6,
+      "contribution_per_1000_visits": 1921.97
+    },
+    {
+      "elasticity": -1.3,
+      "gross_price": 20,
+      "orders_per_1000_visits": 215.1,
+      "contribution_per_1000_visits": 2085.59
+    },
+    {
+      "elasticity": -1.3,
+      "gross_price": 22,
+      "orders_per_1000_visits": 190.0,
+      "contribution_per_1000_visits": 2204.45
+    },
+    {
+      "elasticity": -1.3,
+      "gross_price": 24,
+      "orders_per_1000_visits": 169.7,
+      "contribution_per_1000_visits": 2291.88
+    },
+    {
+      "elasticity": -1.3,
+      "gross_price": 26,
+      "orders_per_1000_visits": 152.9,
+      "contribution_per_1000_visits": 2356.64
+    },
+    {
+      "elasticity": -1.8,
+      "gross_price": 18,
+      "orders_per_1000_visits": 272.7,
+      "contribution_per_1000_visits": 2124.81
+    },
+    {
+      "elasticity": -1.8,
+      "gross_price": 20,
+      "orders_per_1000_visits": 225.6,
+      "contribution_per_1000_visits": 2187.39
+    },
+    {
+      "elasticity": -1.8,
+      "gross_price": 22,
+      "orders_per_1000_visits": 190.0,
+      "contribution_per_1000_visits": 2204.45
+    },
+    {
+      "elasticity": -1.8,
+      "gross_price": 24,
+      "orders_per_1000_visits": 162.5,
+      "contribution_per_1000_visits": 2194.31
+    },
+    {
+      "elasticity": -1.8,
+      "gross_price": 26,
+      "orders_per_1000_visits": 140.7,
+      "contribution_per_1000_visits": 2167.8
+    }
+  ],
+  "promo_holdout": {
+    "sample_total": 16000,
+    "assignment": "Randomized 50:50; synthetic independent prospects",
+    "assumed_true_conversion_rate": {
+      "control": 0.18,
+      "offer": 0.205
+    },
+    "offer_discount_aed": 4.0,
+    "observed_in_demo": {
+      "control_conversion": 0.176,
+      "offer_conversion": 0.2024,
+      "incremental_conversion_pp": 2.64,
+      "conversion_lift_95pct_ci_pp": [
+        1.42,
+        3.85
+      ],
+      "incremental_contribution_per_exposed_aed": -0.465,
+      "contribution_lift_95pct_ci_aed": [
+        -0.584,
+        -0.346
+      ],
+      "decision": "do_not_scale"
+    },
+    "limitations": "Toy sample: one-time conversion only. No repeated ordering, refunds, spillovers, heterogeneous treatment effects or platform fees; not evidence of real UAE demand."
+  },
+  "competitor_audit": {
+    "n_observations": 10,
+    "n_locations": 1,
+    "n_brands": 1,
+    "stale_over_7_days": 0,
+    "category_prices": {
+      "americano": {
+        "count": 1,
+        "min": 16.0,
+        "max": 16.0
+      },
+      "americano_iced": {
+        "count": 1,
+        "min": 16.0,
+        "max": 16.0
+      },
+      "brewed_coffee": {
+        "count": 1,
+        "min": 14.0,
+        "max": 14.0
+      },
+      "cappuccino": {
+        "count": 1,
+        "min": 18.0,
+        "max": 18.0
+      },
+      "flat_white": {
+        "count": 1,
+        "min": 17.0,
+        "max": 17.0
+      },
+      "flavoured_latte": {
+        "count": 1,
+        "min": 24.0,
+        "max": 24.0
+      },
+      "latte_hot": {
+        "count": 1,
+        "min": 18.0,
+        "max": 18.0
+      },
+      "latte_iced": {
+        "count": 1,
+        "min": 18.0,
+        "max": 18.0
+      },
+      "spanish_latte": {
+        "count": 1,
+        "min": 24.0,
+        "max": 24.0
+      },
+      "spanish_latte_iced": {
+        "count": 1,
+        "min": 24.0,
+        "max": 24.0
+      }
+    }
+  },
+  "competitor_observations": [
+    {
+      "observed_on": "2026-11-19",
+      "brand": "Tim Hortons",
+      "city": "Dubai",
+      "area": "Town Square",
+      "platform": "Deliveroo",
+      "product": "Original Blend Coffee",
+      "category": "brewed_coffee",
+      "listed_price_aed": 14.0,
+      "size_ml": "",
+      "menu_url": "https://deliveroo.ae/en/menu/dubai/dubai-town-square/tim-hortons-townsquare",
+      "comparison_notes": "Observed delivery menu price; cup size not shown",
+      "age_days": 0
+    },
+    {
+      "observed_on": "2026-11-19",
+      "brand": "Tim Hortons",
+      "city": "Dubai",
+      "area": "Town Square",
+      "platform": "Deliveroo",
+      "product": "Americano",
+      "category": "americano",
+      "listed_price_aed": 16.0,
+      "size_ml": "",
+      "menu_url": "https://deliveroo.ae/en/menu/dubai/dubai-town-square/tim-hortons-townsquare",
+      "comparison_notes": "Observed delivery menu price; cup size not shown",
+      "age_days": 0
+    },
+    {
+      "observed_on": "2026-11-19",
+      "brand": "Tim Hortons",
+      "city": "Dubai",
+      "area": "Town Square",
+      "platform": "Deliveroo",
+      "product": "Iced Americano",
+      "category": "americano_iced",
+      "listed_price_aed": 16.0,
+      "size_ml": "",
+      "menu_url": "https://deliveroo.ae/en/menu/dubai/dubai-town-square/tim-hortons-townsquare",
+      "comparison_notes": "Observed delivery menu price; cup size not shown",
+      "age_days": 0
+    },
+    {
+      "observed_on": "2026-11-19",
+      "brand": "Tim Hortons",
+      "city": "Dubai",
+      "area": "Town Square",
+      "platform": "Deliveroo",
+      "product": "Latte",
+      "category": "latte_hot",
+      "listed_price_aed": 18.0,
+      "size_ml": "",
+      "menu_url": "https://deliveroo.ae/en/menu/dubai/dubai-town-square/tim-hortons-townsquare",
+      "comparison_notes": "Observed delivery menu price; cup size not shown",
+      "age_days": 0
+    },
+    {
+      "observed_on": "2026-11-19",
+      "brand": "Tim Hortons",
+      "city": "Dubai",
+      "area": "Town Square",
+      "platform": "Deliveroo",
+      "product": "Iced Latte",
+      "category": "latte_iced",
+      "listed_price_aed": 18.0,
+      "size_ml": "",
+      "menu_url": "https://deliveroo.ae/en/menu/dubai/dubai-town-square/tim-hortons-townsquare",
+      "comparison_notes": "Observed delivery menu price; cup size not shown",
+      "age_days": 0
+    },
+    {
+      "observed_on": "2026-11-19",
+      "brand": "Tim Hortons",
+      "city": "Dubai",
+      "area": "Town Square",
+      "platform": "Deliveroo",
+      "product": "Flat White",
+      "category": "flat_white",
+      "listed_price_aed": 17.0,
+      "size_ml": "",
+      "menu_url": "https://deliveroo.ae/en/menu/dubai/dubai-town-square/tim-hortons-townsquare",
+      "comparison_notes": "Observed delivery menu price; cup size not shown",
+      "age_days": 0
+    },
+    {
+      "observed_on": "2026-11-19",
+      "brand": "Tim Hortons",
+      "city": "Dubai",
+      "area": "Town Square",
+      "platform": "Deliveroo",
+      "product": "Tims Cappuccino",
+      "category": "cappuccino",
+      "listed_price_aed": 18.0,
+      "size_ml": "",
+      "menu_url": "https://deliveroo.ae/en/menu/dubai/dubai-town-square/tim-hortons-townsquare",
+      "comparison_notes": "Observed delivery menu price; cup size not shown",
+      "age_days": 0
+    },
+    {
+      "observed_on": "2026-11-19",
+      "brand": "Tim Hortons",
+      "city": "Dubai",
+      "area": "Town Square",
+      "platform": "Deliveroo",
+      "product": "Spanish Latte",
+      "category": "spanish_latte",
+      "listed_price_aed": 24.0,
+      "size_ml": "",
+      "menu_url": "https://deliveroo.ae/en/menu/dubai/dubai-town-square/tim-hortons-townsquare",
+      "comparison_notes": "Observed delivery menu price; cup size not shown",
+      "age_days": 0
+    },
+    {
+      "observed_on": "2026-11-19",
+      "brand": "Tim Hortons",
+      "city": "Dubai",
+      "area": "Town Square",
+      "platform": "Deliveroo",
+      "product": "Iced Spanish Latte",
+      "category": "spanish_latte_iced",
+      "listed_price_aed": 24.0,
+      "size_ml": "",
+      "menu_url": "https://deliveroo.ae/en/menu/dubai/dubai-town-square/tim-hortons-townsquare",
+      "comparison_notes": "Observed delivery menu price; cup size not shown",
+      "age_days": 0
+    },
+    {
+      "observed_on": "2026-11-19",
+      "brand": "Tim Hortons",
+      "city": "Dubai",
+      "area": "Town Square",
+      "platform": "Deliveroo",
+      "product": "Pista Spice Latte",
+      "category": "flavoured_latte",
+      "listed_price_aed": 24.0,
+      "size_ml": "",
+      "menu_url": "https://deliveroo.ae/en/menu/dubai/dubai-town-square/tim-hortons-townsquare",
+      "comparison_notes": "Observed delivery menu price; cup size not shown",
+      "age_days": 0
+    }
+  ],
+  "platform_memberships": [
+    {
+      "observed_on": "2026-11-19",
+      "operator": "Careem",
+      "service": "Careem Plus",
+      "mechanic": "Subscription-based food delivery fee waiver",
+      "aed_monthly_fee": 29.0,
+      "minimum_order_aed": 30.0,
+      "eligibility_notes": "Only select restaurants above qualifying basket; not all food orders",
+      "source_url": "https://help.careem.com/hc/en-us/articles/18217510601363-Careem-Plus"
+    },
+    {
+      "observed_on": "2026-11-19",
+      "operator": "talabat",
+      "service": "talabat pro",
+      "mechanic": "Free delivery on eligible orders",
+      "aed_monthly_fee": null,
+      "minimum_order_aed": null,
+      "eligibility_notes": "Eligible restaurants and orders; current monthly fee not verified",
+      "source_url": "https://www.talabat.com/uae/campaign/pro"
+    },
+    {
+      "observed_on": "2026-11-19",
+      "operator": "talabat",
+      "service": "talabat pro",
+      "mechanic": "Double rewards points",
+      "aed_monthly_fee": null,
+      "minimum_order_aed": null,
+      "eligibility_notes": "Benefits depend on qualifying use and terms",
+      "source_url": "https://www.talabat.com/uae/campaign/pro"
+    }
+  ],
+  "arabic_copy_review": {
+    "reviewed_drafts": 3,
+    "structural_errors": [],
+    "manual_review_required": "Native UAE Arabic editor, legal/compliance and brand owner must approve wording and offers before launch."
+  },
+  "arabic_copy": [
+    {
+      "scenario": "first_order_pickup",
+      "english": "Order your coffee ahead. Choose pickup when it suits you.",
+      "arabic": "اطلب قهوتك مسبقًا، واختر وقت الاستلام المناسب لك.",
+      "context": "General pickup explanation; no unsupported time promise",
+      "claims": []
+    },
+    {
+      "scenario": "afternoon_repeat",
+      "english": "Back for another cup? Your next coffee is a few taps away.",
+      "arabic": "مشتاق لقهوة ثانية؟ اطلب قهوتك القادمة بخطوات بسيطة.",
+      "context": "Repeat-visit message; send only to eligible opted-in customers",
+      "claims": []
+    },
+    {
+      "scenario": "offer_with_terms",
+      "english": "A welcome offer may be available in your app. Check eligibility and terms before ordering.",
+      "arabic": "قد يتوفر عرض ترحيبي في التطبيق. تحقّق من الأهلية والشروط قبل الطلب.",
+      "context": "Do not state a specific benefit, a guaranteed discount or a deadline without approval",
+      "claims": []
+    }
+  ],
+  "data_quality_issues": []
+}
+</script>
+  <script>/* Self-contained report interactions. Source data are generated by the Python build. */
+(() => {
+  'use strict';
+
+  const data = JSON.parse(document.getElementById('case-data').textContent);
+  const $ = id => document.getElementById(id);
+  const money = n => `AED ${Math.abs(Number(n)).toFixed(2)}`;
+  const signed = n => `${Number(n) >= 0 ? '+' : '−'}${money(n)}`;
+  const format = n => Number(n).toLocaleString('en-AE', {maximumFractionDigits: 0});
+  const fixed = (n, dec = 1) => Number(n).toFixed(dec);
+  const nameOf = value => ({paid_social: 'Paid social', referral: 'Referral', organic: 'Organic', marketplace: 'Marketplace'}[value] || value);
+  const html = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[char]));
+  const economics = data.expected_channel_unit_economics;
+  const channels = Object.entries(economics).sort((a, b) => b[1].net_after_cac_90d - a[1].net_after_cac_90d);
+  const strongest = channels[0];
+  const weakest = channels[channels.length - 1];
+
+  function makeCsv(filename, headers, rows) {
+    const quote = value => '"' + String(value ?? '').replace(/"/g, '""') + '"';
+    const output = [headers, ...rows].map(row => row.map(quote).join(',')).join('\r\n');
+    const file = new Blob(['\uFEFF', output], {type: 'text/csv;charset=utf-8'});
+    const url = URL.createObjectURL(file);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 300);
+  }
+
+  // The executive view always uses the saved base scenario; controls below never overwrite it.
+  $('observed-count').textContent = `${data.competitor_audit.n_observations} listings`;
+  $('customer-count').textContent = format(data.synthetic_data.customers);
+  $('best-channel').textContent = nameOf(strongest[0]);
+  $('best-profit').textContent = signed(strongest[1].net_after_cac_90d);
+  $('worst-channel').textContent = nameOf(weakest[0]);
+  $('summary-advice').textContent = `${nameOf(weakest[0])} is below break-even in the base model. Validate CAC and repeat purchasing with local transactions before making a channel allocation.`;
+
+  $('metric-grid').innerHTML = [
+    {key: 'Modeled best channel', value: nameOf(strongest[0]), detail: `${signed(strongest[1].net_after_cac_90d)} / buyer`},
+    {key: 'Modeled worst channel', value: nameOf(weakest[0]), detail: `${signed(weakest[1].net_after_cac_90d)} / buyer`, negative: weakest[1].net_after_cac_90d < 0},
+    {key: 'Generated acquired buyers', value: format(data.synthetic_data.customers), detail: 'Fictional customer cohort'},
+    {key: 'Fictional order events', value: format(data.synthetic_data.orders), detail: 'Fixed-seed reproducible sample'}
+  ].map(item => `<article class="metric-box"><div class="key">${html(item.key)}<\/div><div class="value ${item.negative ? 'negative' : ''}">${html(item.value)}<\/div><div class="detail">${html(item.detail)}<\/div><\/article>`).join('');
+
+  const maxChart = Math.max(1, ...channels.map(([_, row]) => Math.abs(row.net_after_cac_90d)));
+  $('contribution-chart').innerHTML = channels.map(([key, v]) => {
+    const value = v.net_after_cac_90d;
+    const width = Math.abs(value) / maxChart * 47;
+    const left = value < 0 ? 50 - width : 50;
+    return `<div class="chart-row"><span class="chart-label">${html(nameOf(key))}<\/span><div class="zero-track" role="img" aria-label="${html(nameOf(key))}: ${html(signed(value))} expected net contribution per acquired buyer"><span class="zero-bar ${value < 0 ? 'loss' : ''}" style="left:${left.toFixed(2)}%;width:${width.toFixed(2)}%"><\/span><\/div><span class="chart-amount ${value < 0 ? 'loss' : ''}">${html(signed(value))}<\/span><\/div>`;
+  }).join('') + `<div class="chart-axis"><span>Loss<\/span><span>0<\/span><span>Profit<\/span><\/div>`;
+
+  const stageLabels = [
+    ['impressions', 'Impressions'], ['clicks','Clicks'], ['installs','Installs'],
+    ['signups', 'Signups'], ['acquired_buyers', 'First orders']
+  ];
+  const totals = Object.fromEntries(stageLabels.map(([key]) => [key, data.funnel.reduce((sum, row) => sum + Number(row[key] || 0), 0)]));
+  $('funnel-stack').innerHTML = stageLabels.map(([key, label], i) => `<div class="funnel-row"><div><span class="stage">${String(i + 1).padStart(2,'0')}<\/span><span class="stage-name">${label}<\/span><\/div><div><span class="stage-value">${format(totals[key])}<\/span><span class="stage-share">${(100 * totals[key] / totals.impressions).toFixed(1)}%<\/span><\/div><\/div>`).join('');
+
+  const grouped = new Map();
+  for (const row of data.channel_cohorts) {
+    if (!grouped.has(row.channel)) grouped.set(row.channel, {channel: row.channel, buyers:0, repeat30:0, repeat90:0, orders:0, margin:0});
+    const g = grouped.get(row.channel);
+    g.buyers += row.buyers;
+    g.repeat30 += row.repeat_30d_rate * row.buyers;
+    g.repeat90 += row.repeat_90d_rate * row.buyers;
+    g.orders += row.orders_per_buyer_90d * row.buyers;
+    g.margin += row.net_contribution_per_buyer_aed * row.buyers;
+  }
+  const cohorts = [...grouped.values()].map(g => ({...g, repeat30: g.repeat30 / g.buyers, repeat90: g.repeat90 / g.buyers, orders: g.orders / g.buyers, margin: g.margin / g.buyers}));
+  let activeSort = 'margin';
+  let ascending = false;
+  let visibleCohorts = [];
+
+  function drawCohorts() {
+    const filter = $('cohort-filter').value;
+    visibleCohorts = cohorts.filter(row => filter === 'all' || row.channel === filter).sort((a, b) => {
+      const result = activeSort === 'channel' ? nameOf(a.channel).localeCompare(nameOf(b.channel)) : a[activeSort] - b[activeSort];
+      return ascending ? result : -result;
+    });
+    $('cohort-table').innerHTML = visibleCohorts.map(r => `<tr><td>${html(nameOf(r.channel))}<\/td><td class="num">${format(r.buyers)}<\/td><td class="num">${(r.repeat30 * 100).toFixed(1)}%<\/td><td class="num">${(r.repeat90 * 100).toFixed(1)}%<\/td><td class="num">${r.orders.toFixed(2)}<\/td><td class="num ${r.margin < 0 ? 'bad' : 'good'}">${html(signed(r.margin))}<\/td><\/tr>`).join('');
+    $('cohort-count').textContent = `${visibleCohorts.length} channel${visibleCohorts.length === 1 ? '' : 's'} · synthetic`;
+    for (const button of document.querySelectorAll('[data-sort]')) {
+      const col = button.closest('th');
+      col.setAttribute('aria-sort', button.dataset.sort === activeSort ? (ascending ? 'ascending' : 'descending') : 'none');
+    }
+  }
+  $('cohort-filter').addEventListener('change', drawCohorts);
+  document.querySelectorAll('[data-sort]').forEach(button => button.addEventListener('click', () => {
+    const key = button.dataset.sort;
+    ascending = activeSort === key ? !ascending : key === 'channel';
+    activeSort = key;
+    drawCohorts();
+  }));
+  $('cohort-download').addEventListener('click', () => makeCsv('uae_synthetic_cohort_summary.csv',
+    ['channel','buyers','30_day_repeat_rate','90_day_repeat_rate','90_day_orders_per_buyer','90_day_net_contribution_aed_per_buyer','data_type'],
+    visibleCohorts.map(r => [r.channel,r.buyers,r.repeat30.toFixed(4),r.repeat90.toFixed(4),r.orders.toFixed(3),r.margin.toFixed(2),'SIMULATED'])));
+  drawCohorts();
+
+  const observations = data.competitor_observations;
+  const categories = [...new Set(observations.map(o => o.category))].sort();
+  const prettify = s => s.replace(/_/g,' ').replace(/\b\w/g, c => c.toUpperCase());
+  $('menu-category').innerHTML += categories.map(c => `<option value="${html(c)}">${html(prettify(c))}<\/option>`).join('');
+  function drawMenu() {
+    const q = $('menu-search').value.trim().toLowerCase();
+    const category = $('menu-category').value;
+    const selected = observations.filter(o => (category === 'all' || o.category === category) && (!q || `${o.product} ${o.category}`.toLowerCase().includes(q)));
+    $('menu-table').innerHTML = selected.map(o => `<tr><td>${html(o.product)}<\/td><td>${html(prettify(o.category))}<\/td><td class="num">${Number(o.listed_price_aed).toFixed(2)}<\/td><\/tr>`).join('') || '<tr><td colspan="3">No matching menu items<\/td><\/tr>';
+    $('menu-count').textContent = `${selected.length} of ${observations.length} observed menu items`;
+  }
+  $('menu-search').addEventListener('input', drawMenu);
+  $('menu-category').addEventListener('change', drawMenu);
+  drawMenu();
+  $('memberships').innerHTML = data.platform_memberships.map(item => {
+    const terms = [item.aed_monthly_fee == null ? 'Monthly fee not verified' : `AED ${Number(item.aed_monthly_fee).toFixed(0)} / month`, item.minimum_order_aed == null ? null : `Min. order AED ${Number(item.minimum_order_aed).toFixed(0)}`].filter(Boolean).join(' · ');
+    return `<article class="membership-item"><div class="membership-top"><strong>${html(item.service)}<\/strong><a href="${html(item.source_url)}" target="_blank" rel="noopener noreferrer">SOURCE ↗<\/a><\/div><div class="membership-desc">${html(item.mechanic)}<\/div><div class="membership-conditions">${html(terms)}<br>${html(item.eligibility_notes)}<\/div><\/article>`;
+  }).join('');
+
+  // Price elasticity data are precomputed by the source economics model; no unsupported forecasts are added.
+  let elasticity = -1.3;
+  function drawPricing() {
+    const rows = data.price_sensitivity.filter(row => Number(row.elasticity) === elasticity);
+    const best = rows.reduce((acc, row) => row.contribution_per_1000_visits > acc.contribution_per_1000_visits ? row : acc, rows[0]);
+    const maxValue = Math.max(...rows.map(row => row.contribution_per_1000_visits), 1);
+    $('price-chart').innerHTML = rows.map(row => `<div class="price-row ${row.gross_price === best.gross_price ? 'best' : ''}"><span class="price">AED ${row.gross_price}<\/span><div class="price-bar-bg" role="img" aria-label="AED ${row.gross_price}: modeled contribution AED ${fixed(row.contribution_per_1000_visits,2)} per 1000 visits"><div class="price-bar" style="width:${Math.max(0, 100*row.contribution_per_1000_visits/maxValue).toFixed(2)}%"><\/div><\/div><span class="price-result">AED ${format(row.contribution_per_1000_visits)}<\/span><\/div>`).join('');
+    $('price-summary').innerHTML = `At an assumed elasticity of <b>${elasticity}<\/b>, AED <b>${best.gross_price}<\/b> gives the highest modeled contribution (AED <b>${format(best.contribution_per_1000_visits)}<\/b> / 1,000 visits). This is not a recommended live price.`;
+    document.querySelectorAll('[data-elasticity]').forEach(btn => {const on = Number(btn.dataset.elasticity) === elasticity; btn.classList.toggle('active', on);btn.setAttribute('aria-pressed',String(on));});
+  }
+  document.querySelectorAll('[data-elasticity]').forEach(btn => btn.addEventListener('click', () => {elasticity = Number(btn.dataset.elasticity); drawPricing();}));
+  drawPricing();
+
+  let cacPercent = 0;
+  function drawCac() {
+    $('cac-output').textContent = `${cacPercent > 0 ? '+' : ''}${cacPercent}%`;
+    $('cac-table').innerHTML = channels.map(([ch, base]) => {
+      const adjustedCac = base.cac * (1 + cacPercent/100);
+      const adjusted = base.net_after_cac_90d - (adjustedCac - base.cac);
+      return `<div class="cac-row"><span>${html(nameOf(ch))}<\/span><small>CAC ${fixed(adjustedCac,2)}<\/small><strong class="${adjusted < 0 ? 'bad' : 'good'}">${html(signed(adjusted))}<\/strong><\/div>`;
+    }).join('');
+  }
+  $('cac-slider').addEventListener('input', event => {cacPercent = Number(event.target.value);drawCac();});
+  $('reset-scenario').addEventListener('click', () => {cacPercent = 0;elasticity = -1.3;$('cac-slider').value = '0';drawPricing();drawCac();});
+  drawCac();
+
+  const exp = data.promo_holdout.observed_in_demo;
+  $('experiment-size').textContent = `${format(data.promo_holdout.sample_total)} synthetic visitors`;
+  $('control-rate').textContent = `${(100 * exp.control_conversion).toFixed(2)}%`;
+  $('offer-rate').textContent = `${(100 * exp.offer_conversion).toFixed(2)}%`;
+  $('conversion-lift').textContent = `+${exp.incremental_conversion_pp.toFixed(2)} pp`;
+  $('conversion-ci').textContent = `Modeled 95% interval: ${exp.conversion_lift_95pct_ci_pp[0].toFixed(2)} to ${exp.conversion_lift_95pct_ci_pp[1].toFixed(2)} percentage points`;
+  $('contribution-lift').textContent = signed(exp.incremental_contribution_per_exposed_aed);
+  $('experiment-decision').textContent = exp.decision === 'do_not_scale' ? 'DO NOT SCALE ON THIS EVIDENCE' : html(exp.decision.replace(/_/g,' ').toUpperCase());
+  $('experiment-explanation').textContent = `The illustrative offer raises first-order conversion but reduces expected contribution per exposed visitor. The ${format(data.promo_holdout.sample_total)} simulated participants do not establish real UAE customer behavior.`;
+  const ci = exp.contribution_lift_95pct_ci_aed;
+  const left = Math.min(-0.75, ci[0] - 0.1);
+  const right = Math.max(0.2, ci[1] + 0.2);
+  const x = v => ((v - left) / (right - left) * 100).toFixed(2);
+  $('ci-graphic').innerHTML = `<svg viewBox="0 0 500 50" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="24" x2="500" y2="24" stroke="#e5e9e5" stroke-width="2"/><line x1="${x(0)}%" y1="5" x2="${x(0)}%" y2="42" stroke="#90aa9a" stroke-dasharray="3 4"/><line x1="${x(ci[0])}%" y1="24" x2="${x(ci[1])}%" y2="24" stroke="#ae6b56" stroke-width="7" stroke-linecap="round"/><circle cx="${x(exp.incremental_contribution_per_exposed_aed)}%" cy="24" r="5" fill="#7f402c" stroke="white" stroke-width="2"/><\/svg><div class="visually-hidden">Confidence interval from ${signed(ci[0])} to ${signed(ci[1])}, entirely below zero.<\/div>`;
+  $('ci-graphic').setAttribute('aria-label', `Simulated contribution difference 95 percent confidence interval, ${signed(ci[0])} to ${signed(ci[1])} per exposed visitor`);
+
+  const messages = data.arabic_copy;
+  let activeMessage = 0;
+  $('message-tabs').innerHTML = messages.map((msg, index) => `<button class="message-tab" type="button" id="message-tab-${index}" role="tab" aria-controls="message-content" aria-selected="${index === 0}" tabindex="${index === 0 ? 0 : -1}" data-message="${index}">${html(prettify(msg.scenario))}<\/button>`).join('');
+  document.querySelector('.language-grid').id = 'message-content';
+  function drawMessage() {
+    const m = messages[activeMessage];
+    $('english-copy').textContent = m.english;
+    $('arabic-copy').textContent = m.arabic;
+    $('message-context').textContent = m.context;
+    document.querySelectorAll('[data-message]').forEach(btn => {const selected = Number(btn.dataset.message) === activeMessage;btn.setAttribute('aria-selected',String(selected));btn.tabIndex = selected ? 0 : -1;});
+  }
+  document.querySelectorAll('[data-message]').forEach(btn => btn.addEventListener('click', () => {activeMessage = Number(btn.dataset.message);drawMessage();}));
+  $('message-tabs').addEventListener('keydown', event => {
+    if (!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+    event.preventDefault();
+    if (event.key === 'Home') activeMessage = 0;
+    else if (event.key === 'End') activeMessage = messages.length-1;
+    else activeMessage = (activeMessage+(event.key==='ArrowRight'?1:-1)+messages.length)%messages.length;
+    drawMessage();$('message-tab-'+activeMessage).focus();
+  });
+  drawMessage();
+
+  $('csv-export').addEventListener('click', () => makeCsv('uae_modeled_channel_economics.csv',
+    ['channel','cac_aed','break_even_cac_aed','expected_90d_orders_per_buyer','expected_net_after_cac_aed','data_type'],
+    channels.map(([channel, v]) => [channel,v.cac.toFixed(2),v.break_even_cac.toFixed(2),v.expected_orders_90d.toFixed(2),v.net_after_cac_90d.toFixed(2),'SIMULATED'])));
+  $('print-report').addEventListener('click', () => window.print());
+
+  const sidebar = $('sidebar');
+  const backdrop = $('mobile-backdrop');
+  function closeMenu() {sidebar.classList.remove('open');backdrop.hidden = true;$('nav-toggle').setAttribute('aria-expanded','false');document.body.classList.remove('menu-open');}
+  $('nav-toggle').addEventListener('click', () => {const open = !sidebar.classList.contains('open');sidebar.classList.toggle('open',open);backdrop.hidden=!open;$('nav-toggle').setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open);});
+  backdrop.addEventListener('click',closeMenu);
+  document.querySelectorAll('.side-nav a').forEach(a => a.addEventListener('click',closeMenu));
+  window.addEventListener('keydown', event => {if(event.key==='Escape') closeMenu();});
+  if ('IntersectionObserver' in window) {
+    const links = [...document.querySelectorAll('.side-nav a')];
+    const io = new IntersectionObserver(entries => {
+      const current = entries.filter(e => e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+      if (current) links.forEach(link => {const active=link.dataset.section === current.target.id;link.classList.toggle('active',active);if (active) link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});
+    },{rootMargin:'-80px 0px -52% 0px',threshold:[0,.1,.3,.6]});
+    document.querySelectorAll('main section[id]').forEach(section => io.observe(section));
+  }
+})();
+</script>
+</body>
+</html>
