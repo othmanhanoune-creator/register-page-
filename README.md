@@ -1,5 +1,17 @@
 # UAE coffee app growth: when does paid acquisition break even?
 
+## Interactive research dashboard
+
+A responsive, self-contained dashboard accompanies the reproducible Python/SQLite analysis.
+
+- [Open the dashboard source](site/index.html) (download the HTML file and open it in a browser; no server is required)
+- Source-labelled competitor observations and independently modeled acquisition scenarios
+- Searchable coffee-menu audit, contribution comparisons, retention cohorts, price-sensitivity controls, and Arabic content review
+- Keyboard-usable filters, CSV export, and mobile layout
+
+**Evidence boundary:** Public market observations and fictional customer/economics scenarios are clearly distinguished. This work is independent and is not based on Luckin Coffee customer data.
+
+
 A compact decision model for a delivery-first coffee app entering a UAE market. The question is narrow: **which acquisition channel can fund its own first-order incentive within 90 days?** The model connects first-order discounts, repeat buying and acquisition cost, then checks the same logic against a generated order-event dataset using SQL.
 
 This is a **scenario analysis**, not a report of Luckin Coffee transactions. The costs, margins, sample customers and retention assumptions are intentionally editable. No brand sales, customer information or conversion figures are claimed.
