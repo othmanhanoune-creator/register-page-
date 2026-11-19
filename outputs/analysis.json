@@ -1,0 +1,73 @@
+{
+  "project": "UAE coffee app growth: 90-day acquisition economics",
+  "data_status": "Generated customer and order events; cost parameters are illustrative inputs, not Luckin results.",
+  "market_context": {
+    "dubai_2024_international_overnight_visitors": 18720000,
+    "dubai_2025_international_overnight_visitors": 19590000,
+    "visitor_growth_2024_to_2025_pct": 4.65,
+    "dubai_2025_resident_population": 4580000,
+    "warning": "Visitors and population are city-level context, not coffee buyers or TAM estimates."
+  },
+  "assumption_based_channel_economics": [
+    {
+      "channel": "Paid social",
+      "expected_orders_90d": 1.65,
+      "break_even_cac_aed": 9.68,
+      "assumed_cac_aed": 15.0,
+      "expected_contribution_after_cac_aed": -5.33,
+      "minimum_expected_repeat_orders_to_break_even": 1.21
+    },
+    {
+      "channel": "Referral",
+      "expected_orders_90d": 2.07,
+      "break_even_cac_aed": 14.67,
+      "assumed_cac_aed": 7.0,
+      "expected_contribution_after_cac_aed": 7.67,
+      "minimum_expected_repeat_orders_to_break_even": 0.26
+    },
+    {
+      "channel": "Organic",
+      "expected_orders_90d": 1.9,
+      "break_even_cac_aed": 18.05,
+      "assumed_cac_aed": 2.0,
+      "expected_contribution_after_cac_aed": 16.05,
+      "minimum_expected_repeat_orders_to_break_even": 0.0
+    }
+  ],
+  "generated_demo_cohort_sql_results": [
+    {
+      "channel": "Paid social",
+      "acquired_customers": 600,
+      "orders_90d": 987,
+      "repeat_30d_rate": 0.2767,
+      "repeat_90d_rate": 0.5167,
+      "orders_per_customer_90d": 1.645,
+      "contribution_before_cac_per_customer_aed": 9.63,
+      "cac_per_customer_aed": 15.0,
+      "contribution_after_cac_per_customer_aed": -5.37
+    },
+    {
+      "channel": "Referral",
+      "acquired_customers": 400,
+      "orders_90d": 840,
+      "repeat_30d_rate": 0.42,
+      "repeat_90d_rate": 0.7275,
+      "orders_per_customer_90d": 2.1,
+      "contribution_before_cac_per_customer_aed": 14.95,
+      "cac_per_customer_aed": 7.0,
+      "contribution_after_cac_per_customer_aed": 7.95
+    },
+    {
+      "channel": "Organic",
+      "acquired_customers": 300,
+      "orders_90d": 555,
+      "repeat_30d_rate": 0.3467,
+      "repeat_90d_rate": 0.64,
+      "orders_per_customer_90d": 1.85,
+      "contribution_before_cac_per_customer_aed": 17.57,
+      "cac_per_customer_aed": 2.0,
+      "contribution_after_cac_per_customer_aed": 15.57
+    }
+  ],
+  "decision_rule": "Scale a paid channel only when measured 90-day contribution after first-order discounts covers fully loaded CAC, with a holdout and uncertainty bounds."
+}
