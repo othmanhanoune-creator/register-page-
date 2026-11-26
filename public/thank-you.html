@@ -6,16 +6,13 @@
   <meta name="theme-color" content="#17130f">
   <title>Thank You | Changlong</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/thank-you.css">
 </head>
 <body>
   <main class="thank-page">
     <img
       class="thank-background"
-      src="/assets/thank-you-background.png"
+      src="/assets/thank-you-background.png" decoding="async" fetchpriority="low"
       width="2048"
       height="1834"
       alt=""
@@ -25,7 +22,7 @@
     <section class="thank-card" aria-labelledby="thank-title">
       <img
         class="thank-card-art"
-        src="/assets/thank-you-card.png"
+        src="/assets/thank-you-card.png" decoding="async" fetchpriority="low"
         width="1432"
         height="1012"
         alt=""
@@ -36,7 +33,7 @@
         <img class="thank-logo" src="/assets/logo.png" alt="Changlong">
         <h1 id="thank-title">Thank you.</h1>
         <p id="thank-message" class="thank-message">
-          Your registration has been received. We have sent the Changlong catalogue to your email.
+          Your registration is complete. View our catalogue now.
         </p>
         <div class="thank-actions">
           <a class="catalogue-button" href="/assets/Changlong-Catalogue.pdf" target="_blank" rel="noopener">
@@ -54,6 +51,13 @@
   <script>
     const params = new URLSearchParams(location.search);
     const emailFailed = params.get("email") === "failed";
+    if (params.get("email") === "pending") {
+      document.getElementById("thank-message").textContent =
+        "Your registration is complete. View our catalogue now. A copy will be sent separately by email.";
+    } else if (params.get("email") === "sent") {
+      document.getElementById("thank-message").textContent =
+        "Your registration is complete. View our catalogue now. We have also emailed you a copy.";
+    }
 
     if (emailFailed) {
       document.getElementById("thank-message").textContent =
