@@ -1,6 +1,8 @@
 import { connect } from "cloudflare:sockets";
 
-const ENGLISH_CATALOGUE_URL = "https://www.changlongflor.com/wp-content/uploads/changlongflor-product-catalogue.pdf";
+const ENGLISH_CATALOGUE_URL = "https://register-page.othmanhanoune.workers.dev/english-catalogue";
+const ENGLISH_CATALOGUE_ASSET = "/assets/Changlong-English-Catalogue.pdf";
+const TEMPORARY_CATALOGUE_FALLBACK = "https://www.changlongflor.com/wp-content/uploads/changlongflor-product-catalogue.pdf";
 
 const JSON_HEADERS = {
   "Content-Type": "application/json; charset=utf-8",
@@ -11,6 +13,18 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
+    // Prefer the exact library catalogue, served from the existing Cloudflare worker.
+    // Until the binary is uploaded, preserve the previous functioning destination.
+    if (url.pathname === "/english-catalogue" && ["GET", "HEAD"].includes(request.method)) {
+      const assetURL = new URL(ENGLISH_CATALOGUE_ASSET, request.url);
+      const asset = await env.ASSETS.fetch(new Request(assetURL, { method: "HEAD" }));
+      const ready = asset.ok && (asset.headers.get("content-type") || "").toLowerCase().includes("application/pdf");
+      return new Response(null, {
+        status: 302,
+        headers: { "Location": ready ? assetURL.href : TEMPORARY_CATALOGUE_FALLBACK, "Cache-Control": "no-store" }
+      });
+    }
+
     if (url.pathname === "/api/health" && request.method === "GET") {
       const cataloguePath = ENGLISH_CATALOGUE_URL;
       let catalogueAvailable = false;
@@ -18,8 +32,8 @@ export default {
 
       try {
         const catalogueUrl = new URL(cataloguePath, request.url);
-        const catalogueResponse = await fetch(catalogueUrl, { method: "HEAD", signal: AbortSignal.timeout(5000) });
-        catalogueAvailable = catalogueResponse.ok;
+        const catalogueResponse = await env.ASSETS.fetch(new Request(new URL(ENGLISH_CATALOGUE_ASSET, request.url), { method: "HEAD" }));
+        catalogueAvailable = catalogueResponse.ok && (catalogueResponse.headers.get("content-type") || "").toLowerCase().includes("application/pdf");
         const sizeHeader = catalogueResponse.headers.get("content-length");
         catalogueSizeBytes = sizeHeader ? Number(sizeHeader) : null;
       } catch (error) {
