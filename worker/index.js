@@ -1,5 +1,7 @@
 import { connect } from "cloudflare:sockets";
 
+const ENGLISH_CATALOGUE_URL = "https://www.changlongflor.com/wp-content/uploads/changlongflor-product-catalogue.pdf";
+
 const JSON_HEADERS = {
   "Content-Type": "application/json; charset=utf-8",
   "Cache-Control": "no-store"
@@ -10,15 +12,13 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname === "/api/health" && request.method === "GET") {
-      const cataloguePath = env.CATALOGUE_PATH || "/assets/Changlong-Catalogue.pdf";
+      const cataloguePath = ENGLISH_CATALOGUE_URL;
       let catalogueAvailable = false;
       let catalogueSizeBytes = null;
 
       try {
         const catalogueUrl = new URL(cataloguePath, request.url);
-        const catalogueResponse = await env.ASSETS.fetch(
-          new Request(catalogueUrl, { method: "HEAD" })
-        );
+        const catalogueResponse = await fetch(catalogueUrl, { method: "HEAD", signal: AbortSignal.timeout(5000) });
         catalogueAvailable = catalogueResponse.ok;
         const sizeHeader = catalogueResponse.headers.get("content-length");
         catalogueSizeBytes = sizeHeader ? Number(sizeHeader) : null;
@@ -344,16 +344,6 @@ async function sendCatalogueEmailViaAlibabaSMTP(request, env, data) {
     };
   }
 
-  const catalogue = await loadCatalogue(request, env);
-
-  if (!catalogue.ok) {
-    return {
-      ok: false,
-      provider: "alibaba_smtp",
-      error: catalogue.error
-    };
-  }
-
   const host = env.SMTP_HOST || "smtp.qiye.aliyun.com";
   const port = Number(env.SMTP_PORT || 465);
   const fromEmail = clean(env.EXPORT_SMTP_USER, 254);
@@ -369,9 +359,7 @@ async function sendCatalogueEmailViaAlibabaSMTP(request, env, data) {
     toEmail: lead.email,
     subject,
     textBody,
-    htmlBody,
-    attachmentFilename: catalogue.filename,
-    attachmentBase64: catalogue.base64
+    htmlBody
   });
 
   let socket;
@@ -528,60 +516,32 @@ function createSmtpSession(reader, writer) {
   };
 }
 
-function buildMimeMessage({
-  fromName,
-  fromEmail,
-  toEmail,
-  subject,
-  textBody,
-  htmlBody,
-  attachmentFilename,
-  attachmentBase64
-}) {
-  const mixedBoundary = `mixed_${crypto.randomUUID()}`;
-  const alternativeBoundary = `alt_${crypto.randomUUID()}`;
-
-  const encodedSubject = encodeMimeHeader(subject);
-  const encodedFromName = encodeMimeHeader(fromName);
-
-  const lines = [
-    `From: ${encodedFromName} <${fromEmail}>`,
+function buildMimeMessage({ fromName, fromEmail, toEmail, subject, textBody, htmlBody }) {
+  const boundary = `alt_${crypto.randomUUID()}`;
+  return [
+    `From: ${encodeMimeHeader(fromName)} <${fromEmail}>`,
     `To: <${toEmail}>`,
-    `Subject: ${encodedSubject}`,
+    `Subject: ${encodeMimeHeader(subject)}`,
     `Date: ${new Date().toUTCString()}`,
     `Message-ID: <${crypto.randomUUID()}@changlongflor.com>`,
     "MIME-Version: 1.0",
-    `Content-Type: multipart/mixed; boundary="${mixedBoundary}"`,
+    `Content-Type: multipart/alternative; boundary="${boundary}"`,
     "",
-    `--${mixedBoundary}`,
-    `Content-Type: multipart/alternative; boundary="${alternativeBoundary}"`,
-    "",
-    `--${alternativeBoundary}`,
+    `--${boundary}`,
     'Content-Type: text/plain; charset="UTF-8"',
     "Content-Transfer-Encoding: base64",
     "",
     wrapBase64(toBase64Utf8(textBody)),
     "",
-    `--${alternativeBoundary}`,
+    `--${boundary}`,
     'Content-Type: text/html; charset="UTF-8"',
     "Content-Transfer-Encoding: base64",
     "",
     wrapBase64(toBase64Utf8(htmlBody)),
     "",
-    `--${alternativeBoundary}--`,
-    "",
-    `--${mixedBoundary}`,
-    `Content-Type: application/pdf; name="${safeHeaderFilename(attachmentFilename)}"`,
-    "Content-Transfer-Encoding: base64",
-    `Content-Disposition: attachment; filename="${safeHeaderFilename(attachmentFilename)}"`,
-    "",
-    wrapBase64(attachmentBase64),
-    "",
-    `--${mixedBoundary}--`,
+    `--${boundary}--`,
     ""
-  ];
-
-  return lines.join("\r\n");
+  ].join("\r\n");
 }
 
 function dotStuff(message) {
@@ -592,35 +552,6 @@ function dotStuff(message) {
     .join("\r\n");
 }
 
-async function loadCatalogue(request, env) {
-  const path = env.CATALOGUE_PATH || "/assets/Changlong-Catalogue.pdf";
-  const filename = env.CATALOGUE_FILENAME || "Changlong-Catalogue.pdf";
-
-  const url = new URL(path, request.url);
-  const response = await env.ASSETS.fetch(new Request(url));
-
-  if (!response.ok) {
-    return {
-      ok: false,
-      error: `Catalogue PDF is missing at ${path}.`
-    };
-  }
-
-  const buffer = await response.arrayBuffer();
-
-  if (buffer.byteLength === 0) {
-    return {
-      ok: false,
-      error: "Catalogue PDF is empty."
-    };
-  }
-
-  return {
-    ok: true,
-    filename,
-    base64: arrayBufferToBase64(buffer)
-  };
-}
 
 async function logEmailMessage(env, key, data) {
   const { leadId, lead, emailResult } = data;
@@ -665,7 +596,7 @@ function buildThankYouEmail(name, env) {
   <div style="font-family:Arial,sans-serif;max-width:620px;margin:auto;color:#172033;line-height:1.65">
     <h2 style="margin-bottom:8px">Thank you, ${safeName}.</h2>
     <p>Thank you for connecting with Changlong.</p>
-    <p>Our latest flooring catalogue is attached to this email for your reference.</p>
+    <p>You can view our English flooring catalogue here: <a href="${ENGLISH_CATALOGUE_URL}" style="color:#244f3e">View English catalogue (PDF)</a>.</p>
     <p>Our team will be happy to discuss products, specifications, samples and cooperation opportunities with you.</p>
     <p>If you have any questions, need additional information, or have any problem opening the catalogue, please contact me directly at <a href="mailto:${contactEmail}" style="color:#244f3e">${contactEmail}</a>.</p>
     <p style="margin-top:28px">
@@ -689,7 +620,7 @@ function buildThankYouText(name, env) {
     `Thank you, ${name}.`,
     "",
     "Thank you for connecting with Changlong.",
-    "Our latest flooring catalogue is attached to this email for your reference.",
+    `View our English flooring catalogue (PDF): ${ENGLISH_CATALOGUE_URL}`,
     "Our team will be happy to discuss products, specifications, samples and cooperation opportunities with you.",
     `If you have any questions, need additional information, or have any problem opening the catalogue, please contact me directly at ${contactEmail}.`,
     "",
