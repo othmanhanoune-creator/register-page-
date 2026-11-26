@@ -41,13 +41,11 @@ form?.addEventListener("submit", async (event) => {
       throw new Error(result.error || `Registration failed (${response.status}).`);
     }
 
-    // The registration is complete once Supabase accepted it. Email delivery is
-    // allowed to fail independently and is shown on the thank-you page.
-    if (!result.email_sent) {
-      console.warn("Catalogue email was not sent:", result.email_error || "Unknown SMTP error.");
-    }
-
-    const emailFlag = result.email_sent ? "sent" : "failed";
+    // A successful response means the lead is already saved.
+    // Legacy responses remain compatible during deployment.
+    const emailFlag = result.email_status === "pending"
+      ? "pending"
+      : result.email_sent ? "sent" : "failed";
     window.location.assign(`/thank-you.html?email=${emailFlag}`);
   } catch (error) {
     console.error(error);
