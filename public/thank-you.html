@@ -36,8 +36,8 @@
           Your registration is complete. View our catalogue now.
         </p>
         <div class="thank-actions">
-          <a class="catalogue-button" href="/assets/Changlong-Catalogue.pdf" target="_blank" rel="noopener">
-            View catalogue
+          <a class="catalogue-button" href="https://www.changlongflor.com/wp-content/uploads/changlongflor-product-catalogue.pdf" target="_blank" rel="noopener">
+            View English catalogue
           </a>
         </div>
       </div>
@@ -53,10 +53,10 @@
     const emailFailed = params.get("email") === "failed";
     if (params.get("email") === "pending") {
       document.getElementById("thank-message").textContent =
-        "Your registration is complete. View our catalogue now. A copy will be sent separately by email.";
+        "Your registration is complete. View our catalogue now. We will also email you the catalogue link.";
     } else if (params.get("email") === "sent") {
       document.getElementById("thank-message").textContent =
-        "Your registration is complete. View our catalogue now. We have also emailed you a copy.";
+        "Your registration is complete. View our catalogue now. We have also emailed you the catalogue link.";
     }
 
     if (emailFailed) {
