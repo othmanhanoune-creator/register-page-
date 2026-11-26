@@ -6,7 +6,7 @@ const JSON_HEADERS = {
 };
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
     if (url.pathname === "/api/health" && request.method === "GET") {
@@ -59,7 +59,7 @@ export default {
         return json({ ok: false, error: "Method not allowed." }, 405);
       }
 
-      return registerLead(request, env);
+      return registerLead(request, env, ctx);
     }
 
     const assetResponse = await env.ASSETS.fetch(request);
@@ -75,7 +75,7 @@ export default {
   }
 };
 
-async function registerLead(request, env) {
+async function registerLead(request, env, ctx) {
   const supabaseKey = getSupabaseKey(env);
 
   if (!env.SUPABASE_URL || !supabaseKey) {
@@ -145,45 +145,32 @@ async function registerLead(request, env) {
       created = true;
     }
 
-    // The lead itself is the critical write. Notes are useful metadata, but a
-    // note-table problem must not make a successfully saved registration look failed.
-    try {
-      await addFairRegistrationNote(env, supabaseKey, {
-        leadId,
-        eventSlug,
-        submittedAt,
-        lead
-      });
-    } catch (error) {
-      console.error("Fair note insert failed:", error);
-    }
-
-    // Registration is already safely stored at this point.
-    // The email is the second action.
-    const emailResult = await sendCatalogueEmailViaAlibabaSMTP(
-      request,
-      env,
-      { leadId, eventSlug, lead }
-    );
-
-    // Email logging is useful for BI/history, but it is not allowed to turn a
-    // successfully stored fair registration into a 500 response.
-    try {
-      await logEmailMessage(env, supabaseKey, {
-        leadId,
-        lead,
-        emailResult
-      });
-    } catch (error) {
-      console.error("Fair email log insert failed:", error);
-    }
+    // Only the confirmed lead write is on the visitor's critical path.
+    // Cloudflare continues these tasks after sending the HTTP response.
+    ctx.waitUntil(Promise.allSettled([
+      addFairRegistrationNote(env, supabaseKey, { leadId, eventSlug, submittedAt, lead })
+        .catch(error => console.error("Fair note insert failed:", error)),
+      (async () => {
+        let emailResult;
+        try {
+          emailResult = await sendCatalogueEmailViaAlibabaSMTP(request, env, { leadId, eventSlug, lead });
+        } catch (error) {
+          console.error("Catalogue email failed:", error);
+          emailResult = { ok: false, provider: "alibaba_smtp", error: String(error?.message || error) };
+        }
+        try {
+          await logEmailMessage(env, supabaseKey, { leadId, lead, emailResult });
+        } catch (error) {
+          console.error("Fair email log insert failed:", error);
+        }
+      })()
+    ]));
 
     return json({
       ok: true,
       lead_id: leadId,
       created,
-      email_sent: emailResult.ok,
-      email_error: emailResult.ok ? null : clean(emailResult.error || "Email was not sent.", 300)
+      email_status: "pending"
     });
   } catch (error) {
     console.error("Registration error:", error);
